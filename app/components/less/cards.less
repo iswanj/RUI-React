@@ -1,0 +1,22 @@
+.rui-card {
+	width: 100%;
+    display: block;
+    position: relative;
+    clear: both;
+    background-color: @brand-default;
+    padding: .6em 1em;
+    border: 1px solid #b0bec5;
+    margin-bottom: .4em;
+    border-radius: @border-radius-base;
+
+    &.card-success {
+    	background-color: lighten(@brand-success-light, 15%);
+    	border-color: @brand-success-light;
+
+    }
+
+    &.card-danger {
+    	background-color: lighten(@brand-danger, 15%);
+    	border-color: @brand-danger;
+    }
+}

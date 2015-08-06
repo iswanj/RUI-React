@@ -1,0 +1,221 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+
+//## Brand colors
+
+@brand-dark:			#1d2027;
+@brand-primary-dark:    #2e323b;
+@brand-primary:         #1e90ff;
+@brand-success:         #14892c;
+@brand-success-light:	#67ab49;
+@brand-info:            #439fe0;
+@brand-warning:         #f79232;
+@brand-danger:          #d04437;
+@brand-yellow:          #f6c342;
+@brand-default:			#eeeeee;
+
+@brand-gold:			#fed300;
+@brand-silver:			#a09d9b;
+@brand-bronze:			#c99c23;
+
+
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:               #fff;
+
+//** Global text color on `<body>`.
+@text:					@brand-primary-dark;
+@sub-text:				lighten(@brand-primary-dark, 15%);
+@text-small:			lighten(@brand-primary-dark, 25%);
+
+//** Text muted color
+@text-muted:                  @text-small;
+
+
+//** Global textual link color.
+@link-color:            @brand-primary-dark;
+//** Link hover color set via `darken()` function.
+@link-hover-color:      @sub-text;
+//** Link hover decoration.
+@link-hover-decoration: underline;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more
+
+@border-radius-base:        4px;
+@border-radius-large:       5px;
+@border-radius-small:       2px;
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:  'Roboto', sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          14px;
+@font-size-base-progress: 10px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base-progress * @line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+@headings-font-family:    @font-family-sans-serif;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+@headings-color:          inherit;
+
+
+//** Buttons style
+@btn-default-bg:		@brand-default;
+@btn-default-border:	darken(@brand-default, 10%);
+@btn-default-color:		@brand-primary-dark;
+
+// btn primary
+@btn-primary-bg:		@brand-primary;
+@btn-primary-border:	darken(@brand-primary, 10%);
+@btn-primary-color:		#fff;
+
+// btn danger
+@btn-danger-bg:		@brand-danger;
+@btn-danger-border:	darken(@brand-danger, 10%);
+@btn-danger-color:		#fff;
+
+@btn-font-size-base: 			.9em;
+@btn-sm-font-size-base: 		.75em;
+@btn-line-height-base: 			1.444;
+@btn-link-line-height-base: 	1.444;
+@btn-sm-line-height-base: 		1.222;
+@btn-link-sm-line-height-base: 	1.333;
+
+
+// Buttons padding
+@btn-padding-vertical:			.4em;
+@btn-padding-horizontal:		1em;
+
+// Button small padding
+@btn-padding-sm-vertical:		.4em;
+@btn-padding-sm-horizontal:		.8em;
+
+
+
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled:		not-allowed;
+
+
+//** Form sizes
+@input-short:			75px;
+@input-def:				250px;
+@input-medium:			350px;
+@input-long:			500px;
+
+//** Application Indexes
+
+@index-level-1:			100;
+@index-level-2:			200;
+@index-level-3:			300;
+@index-level-4:			400;
+@index-level-5:			500;
+@index-level-6:			600;
+@index-level-7:			700;
+@index-level-8:			800;
+@index-level-9:			900;
+@index-level-10:		1000;
+
+
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `@screen-xs` as of v3.0.1
+@screen-xs:                  480px;
+//** Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `@screen-md` as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+//** Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:         30px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint:     @screen-sm-min;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+@container-tablet:             (720px + @grid-gutter-width);
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            (940px + @grid-gutter-width);
+//** For `@screen-md-min` and up.
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:      (1140px + @grid-gutter-width);
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;

@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RUI - React UI Components</title>
+	<title>RUI - React UI Components Library</title>
+	<link rel="stylesheet" type="text/css" href="lib/highlightjs/github.css">
+	<link rel="stylesheet" type="text/css" href="lib/example.css">
+	<style type="text/css">
+	body {
+		
+	}
+	.sidebar {
+		/*width: 20%;*/
+		border-right: 1px solid #ccc;
+		height: 100vh;
+		float: left;
+	}
+	.sidebar ul {
+		padding: 1em;
+	}
+	.sidebar ul li a:link, .sidebar ul li a:visited{
+		text-decoration: none;
+		line-height: 1.6em;
+	}
+	.sidebar ul li a:hover {
+		text-decoration: underline;
+	}
+	.main {
+		/*width: 80%;*/
+		float: left;
+		padding: 1em 1.5em;
+		overflow-y: auto;
+	}
+	</style>
 </head>
 <body>
- <div id="app"></div>
- <script type="text/javascript" src="bundle.js" ></script>
-</body>
+<div id="app"></div>
+<script type="text/javascript" src="bundle.js" ></script>
 </html>

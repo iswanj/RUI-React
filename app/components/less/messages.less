@@ -1,0 +1,76 @@
+.rui-message {
+	margin-top: .8em;
+	padding: .8em;
+	overflow-y: auto;
+	background-color: #fff;
+	.message-variant(@brand-info);
+	.rounded(@border-radius-base);
+
+	.msg-icon {
+		margin-right: .8em;
+		i {
+			font-size: 2.5em;
+		}
+	}
+
+	.msg-content {
+		width: 90%;
+		.title {
+			color: @brand-info;
+		}
+		.info {
+			font-size: .9em;
+		}
+	}
+
+
+	// message variant 
+	&.message-danger {
+		.message-variant(@brand-danger);
+
+		.msg-content {
+			.title {
+				color: @brand-danger;
+			}
+		}
+	}
+	&.message-success {
+		.message-variant(@brand-success-light);
+
+		.msg-content {
+			.title {
+				color: @brand-success-light;
+			}
+		}
+	}
+	&.message-warning {
+		.message-variant(@brand-warning);
+
+		.msg-content {
+			.title {
+				color: @brand-warning;
+			}
+		}
+	}
+}
+
+.rui-toaster {
+	position: fixed;
+	top: 1.5em;
+	right: 1em;
+	z-index: @index-level-10;
+	width: 500px;
+	.drop-shadow(0, 1px, 2px, 0.2);
+
+	.rui-message {
+		margin-top: 0;
+		.close {
+			position: absolute;
+			top: .8em;
+			right: .8em;
+			i {
+				font-size: 1.3em;
+			}
+		}
+	}
+}

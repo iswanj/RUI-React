@@ -1,0 +1,99 @@
+.rui-badges {
+	background: @brand-default;
+	border: 1px solid @brand-default;
+	color: @brand-primary-dark;
+	display: inline-block;
+	font-weight: 500;
+	font-size: 10px;
+	margin: 0;
+	line-height: 1.33;
+	padding: 1px 5px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	.rounded(@border-radius-small);
+	&.no {
+		.rounded(@border-radius-base);
+		color: @sub-text;
+
+		&.gold {
+			background: @brand-gold;
+			border: 1px solid @brand-gold;
+			color: @text;
+		}
+		&.silver {
+			background: @brand-silver;
+			border: 1px solid @brand-silver;
+			color: @text;
+		}
+		&.bronze {
+			background: @brand-bronze;
+			border: 1px solid @brand-bronze;
+			color: @text;
+		}
+	}
+
+	&.rui-label-o {
+		background-color: #fff;
+		border: 1px solid @brand-default;
+	}
+
+	//lable sizes
+	&.rui-label-lg {
+		font-size: 1.8em;
+		padding: 0 .3em;
+	}
+
+	//label colors
+	&.rui-label-completed {
+		background-color: @brand-primary-dark;
+		border: 1px solid @brand-primary-dark;
+		color: #fff;
+	}
+	&.rui-label-completed-o {
+		background-color: #fff;
+		border: 1px solid @brand-primary-dark;
+		color: @brand-primary-dark;
+	}
+
+	&.rui-label-success {
+		background-color: @brand-success;
+		border: 1px solid @brand-success;
+		color: #fff;
+	}
+	&.rui-label-success-o {
+		background-color: #fff;
+		border: 1px solid @brand-success;
+		color: @brand-success;
+	}
+	&.rui-label-info {
+		background-color: @brand-info;
+		border: 1px solid @brand-info;
+		color: #fff;
+	}
+	&.rui-label-info-o {
+		background-color: #fff;
+		border: 1px solid @brand-info;
+		color: @brand-info;
+	}
+	&.rui-label-danger {
+		background-color: @brand-danger;
+		border: 1px solid @brand-danger;
+		color: #fff;
+	}
+	&.rui-label-danger-o {
+		background-color: #fff;
+		border: 1px solid @brand-danger;
+		color: @brand-danger;
+	}
+	&.rui-label-warning {
+		background-color: @brand-warning;
+		border: 1px solid @brand-warning;
+		color: #fff;
+	}
+	&.rui-label-warning-o {
+		background-color: #fff;
+		border: 1px solid @brand-warning;
+		color: @brand-warning;
+	}
+}

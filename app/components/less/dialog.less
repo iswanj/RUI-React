@@ -1,0 +1,82 @@
+.rui-dialog {
+	display: none;
+	position: relative;
+	.dialog-content {
+		&.dialog-small {
+			width: 40%;
+		}
+		&.dialog-medium {
+			width: 60%;
+		}
+		&.dialog-large {
+			width: 80%;
+		}
+		margin: 2em auto;
+		.rounded(@border-radius-base);
+		overflow: hidden;
+		.drop-shadow(0, 1px, 2px, 0.2);
+		z-index: @index-level-9;
+
+		.dialog-header {
+			background-color: @brand-default;
+			padding: 1.4em;
+			border-bottom: 1px solid darken(@brand-default, 10%);
+			width: 100%;
+			float: left;
+
+			h3{
+				margin: 0;
+				font-weight: 400;
+				float: left;
+				color: @sub-text;
+			}
+			.close {
+				float: right;
+				color: @sub-text;
+				i {
+					font-size: 1.5em;
+				}
+			}
+
+			&.dialog-warning {
+				background-color: @brand-danger;
+
+				h3, .close {
+					color: #fff;
+				}
+			}
+		}
+
+		.dialog-body {
+			background-color: @body-bg;
+			min-height: 300px;
+			padding: .8em;
+			float: left;
+			width: 100%;
+		}
+
+		.dialog-footer {
+			background-color: @body-bg;
+			padding: .7em;
+			border-top: 1px solid darken(@brand-default, 10%);
+			float: left;
+			width: 100%;
+		}
+	}
+	&.rui-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: @index-level-8;
+		background-color: fade(@brand-dark, 80%);
+		overflow-y: auto;
+	}
+}
+
+
+
+.dialog-open {
+	overflow: hidden;
+}

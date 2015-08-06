@@ -1,0 +1,192 @@
+.rui-form {
+	margin: 20px 0 0;
+    position: relative;
+
+    .input-group, .group {
+    	box-sizing: border-box;
+	    clear: both;
+	    padding: 4px 0 4px 145px;
+	    position: relative;
+	    margin: 1px 0;
+	    width: 100%;
+
+	    &:after, &:before {
+	    	content: " ";
+	   		display: table;
+	    }
+    }
+
+	&:first-child{
+		margin-top: 0;
+	}
+
+	.text, .select {
+		height: 2.14285714em;
+	    line-height: 1.4285714285714;
+	    padding: 4px 5px;
+	}
+
+	.text, .textarea, .select, .multi-select, .password {
+		border: 1px solid lighten(@text-small, 30%);
+	    border-radius: 3.01px;
+	    box-sizing: border-box;
+	    font-size: inherit;
+	    margin: 0;
+	    max-width: @input-def;
+	    vertical-align: baseline;
+	    width: 100%;
+
+	    &.short-input {
+	    	max-width: @input-short;
+	    }
+	    &.medium-input {
+	    	max-width: @input-medium;
+	    }
+	    &.long-input {
+	    	max-width: @input-long;
+	    }
+	}
+
+	.text, .textarea, .upfile {
+		background: #fff;
+	    color: @text;
+	    font-family: inherit;
+	    font-size: 14px;
+	}
+
+	.select {
+		padding: 6px 5px 5px;
+    	vertical-align: top;
+	}
+
+	//radio button and checkbox
+	div.checkbox, div.radio {
+		margin: 10px 0 0;
+		padding: 0 0 0 20px;
+		position: relative;
+	}
+	legend+.checkbox, legend+.input-group, legend+.radio {
+		margin-top: 0;
+		padding-top: 8px;
+	}
+	div.checkbox input.checkbox, div.radio input.radio {
+		box-sizing: border-box;
+		font-size: 14px;
+		// height: 1.4285714285714em;
+		left: 0;
+		margin: 0;
+		padding: 2px;
+		position: absolute;
+		vertical-align: baseline;
+	}
+	.checkbox>label, .radio>label {
+		color: @text;
+	}
+	
+	//uplaod file 
+	.upfile {
+		box-sizing: border-box;
+	    font-family: inherit;
+	    font-size: inherit;
+	    margin: 4px 0;
+	    padding: 0;
+	}
+
+	// error message 
+	.checkbox .error, .input-group .error, .group .error, .radio .error {
+		clear: both;
+		color: @brand-danger;
+		display: block;
+		font-size: 1.1em;
+		margin: 5px 0 0;
+	}
+
+	// label styles
+	label, legend {
+		color: @sub-text;
+	}
+	.input-group>label, legend {
+		float: left;
+	    margin-left: -145px;
+	    padding: 8px 0 0;
+	    position: relative;
+	    text-align: right;
+	    width: 130px;
+	    word-wrap: break-word;
+
+	    i {
+	    	font-size: .7em;
+	    	color: @brand-danger; 
+	    	left: 100%;
+		    position: absolute;
+		    top: 5px;
+	    }
+	}
+
+	.group legend  {
+		display: block;
+	}
+
+	div.description {
+		color: @text-small;
+		font-size: .9em;
+   		line-height: 1.66666666666667;
+    	margin: 5px 0 0;
+	}
+
+	.input-group:after, .group:after {
+		clear: both;
+	}
+
+	.multi-select, .select[size], .textarea {
+		height: auto;
+		line-height: 1.4285714285714;
+		margin: 0;
+		padding: 4px 5px;
+	}
+
+	option {
+		color: @text;
+		background-color: #fff;
+	}
+
+	optgroup {
+	    background-color: @brand-default;
+	    color: @text-small;
+	    font-style: normal;
+	    font-weight: 400;
+	    option {
+	    	color: @text;
+			background-color: #fff;
+	    }
+	}
+
+	//Disabled input style
+	.radio[disabled], .text[disabled] {
+		cursor: not-allowed;
+	}
+	.multi-select[disabled], .password[disabled], .select[disabled], .text[disabled], .textarea[disabled] {
+		cursor: not-allowed;
+		background-color: @brand-default;
+		color: @sub-text;
+	}
+	.multi-select[disabled], .multi-select[disabled] optgroup, .multi-select[disabled] option {
+		background-color: @brand-default;
+		color: @sub-text;
+	}
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    @text-small;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    @text-small;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    @text-small;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    @text-small;
+}

@@ -1,0 +1,104 @@
+// Scaffolding
+
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+
+// Body reset
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: @font-family-sans-serif;
+  font-size: @font-size-base;
+  font-weight: 400;
+  color: @text;
+  background-color: @body-bg;
+}
+p {
+  line-height: 1.6em;
+  font-size: 1em;
+  margin-bottom: .4em;
+}
+.help {
+  color: @sub-text;
+  font-size: .85em;
+}
+
+em {
+  font-style: italic;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// Links
+
+a {
+    &:link, &:visited {
+    color: @brand-dark;
+    text-decoration: underline;
+    }
+
+    &:hover, &:active,
+    &:focus {
+        color: @brand-primary;
+        text-decoration: none;
+    }
+}
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  display: block;
+  max-width: 100%; // Set a maximum relative to the parent
+  height: auto;
+}
+
+// Rounded corners
+.img-rounded {
+  .rounded(50%);
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
+}
+
+
+// Horizontal rules
+
+// hr {
+//   margin-top:    @line-height-computed;
+//   margin-bottom: @line-height-computed;
+//   border: 0;
+//   border-top: 1px solid @hr-border;
+// }
+
+
+// iOS "clickable elements" fix for role="button"
+
+[role="button"] {
+  cursor: pointer;
+}

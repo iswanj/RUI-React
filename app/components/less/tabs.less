@@ -1,0 +1,139 @@
+.rui-nav {
+
+	&.rui-tabs {
+		border-bottom: 1px solid @brand-default;
+		float: left;
+		width: 100%;
+		li {
+			float: left;
+			margin-right: .1em;
+			
+			margin-bottom: -1px;
+			&:first-child {
+				margin-left: .8em;
+			}
+			
+			a {
+				&:link, &:visited {
+					.border-radius(@border-radius-base, 0, 0, @border-radius-base);
+					border: 1px solid transparent;
+					border-bottom: none;
+					display: block;
+					padding: .8em 1em;
+					text-decoration: none;
+					font-size: .9em;
+					color: @sub-text;
+				}
+				&:hover, &:active {
+					background-color: @brand-default;
+					border-color: @brand-default;
+				}
+
+				&.active {
+					&:link, &:visited {
+						color: @text;
+						border: 1px solid @brand-default;
+						border-bottom: none;
+						background-color: @body-bg;
+					}
+				}
+			}
+		}
+	}
+
+	&.rui-tabs-vertical {
+		border-right: 1px solid @brand-default;
+		//temp width (until apply the grid system)
+		width: 20%;
+		float: left;
+
+		li {
+			margin-bottom: .1em;
+			margin-right: -1px;
+			&:first-child {
+				margin-top: .8em;
+			}
+			&:last-child {
+				margin-bottom: .8em;
+			}
+
+			a {
+				&:link, &:visited {
+					.border-radius(0, 0, @border-radius-base, @border-radius-base);
+					border: 1px solid transparent;
+					border-right: none;
+					display: block;
+					padding: .8em 1em;
+					text-decoration: none;
+					font-size: .9em;
+					color: @sub-text;
+				}
+
+				&:hover, &:active {
+					background-color: @brand-default;
+					border-color: @brand-default;
+				}
+
+				&.active {
+					&:link, &:visited {
+						color: @text;
+						border: 1px solid @brand-default;
+						border-right: none;
+						background-color: @body-bg;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-wrap {
+	width: 100%;
+	float: left;
+}
+
+.rui-tab-content {
+	&.rui-horizontal {
+		clear: both;
+		width: 100%;
+
+		.tab-panel {
+			display: none;
+			padding: 1em;
+			//background-color: #ccc;
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+	
+	&.rui-vertical {
+		float: left;
+		width: 78%;
+		.tab-panel {
+			display: none;
+			padding: 1em;
+			//background-color: #ccc;
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
+
+.rui-tab-content-vertical {
+	clear: both;
+	width: 100%;
+
+	.tab-panel {
+		display: none;
+		padding: 1em;
+		//background-color: #ccc;
+
+		&.active {
+			display: block;
+		}
+	}
+}
