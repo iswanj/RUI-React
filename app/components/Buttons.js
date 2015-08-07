@@ -1,13 +1,52 @@
 import React from 'react';
-import Button from './Button/Button';
+import {Button} from './Button/Button';
+import CodeBlock from './CodeBlock';
 
 class Buttons extends React.Component {
 	handleClick() {
-		console.log("clicked");
+		console.log("...clicked");
 	}
 	render() {
+		let moduleUsage = 
+			'import React from \'react\';\n' +
+			'//Import Button Component\n'+
+			'import {Button} from \'./Button/Button\';\n';
+
+		let usageCode =
+			'//Button Normal\n' +
+			'<Button className="rui-button-primary" btnText="Save" clickBtn={this.handleClick} />\n' +
+			'<Button btnText="Cancel" clickBtn={this.handleClick} /> \n' +
+			'<Button className="rui-button-danger" btnText="Delete" clickBtn={this.handleClick} />\n' +
+			'\n' +
+			'//Button Small\n' +
+			'<Button className="rui-button-primary rui-button-sm" btnText="Save" clickBtn={this.handleClick} />\n' +
+			'<Button className="rui-button-sm" btnText="Cancel" clickBtn={this.handleClick} /> \n' +
+			'<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />\n';
 		return (
-			<Button className="rui-button-primary" btnText="Button" clickBtn={this.handleClick} />
+			<div>
+				<h1>Buttons</h1>
+				<p className="help">( Core Components )</p>
+				<div className="example">
+					<p className="head">Example</p>
+					<p className="help">Button Normal</p>
+					<Button className="rui-button-primary" btnText="Save" clickBtn={this.handleClick} />
+					<Button btnText="Cancel" clickBtn={this.handleClick} /> 
+					<Button className="rui-button-danger" btnText="Delete" clickBtn={this.handleClick} />
+					<br /><br />
+					<p className="help">Button Small</p>
+					<Button className="rui-button-primary rui-button-sm" btnText="Save" clickBtn={this.handleClick} />
+					<Button className="rui-button-sm" btnText="Cancel" clickBtn={this.handleClick} /> 
+					<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />
+				</div>
+				<div className="example-code">
+					<CodeBlock>
+						{moduleUsage}
+					</CodeBlock>
+					<CodeBlock>
+						{usageCode}
+					</CodeBlock>
+				</div>
+			</div>
 		)
 	}
 }
