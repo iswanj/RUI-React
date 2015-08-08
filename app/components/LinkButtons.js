@@ -1,5 +1,5 @@
 import React from 'react';
-import {LinkButton} from './Button/Button';
+import {LinkButton} from './Comp/Button';
 import CodeBlock from './CodeBlock';
 
 class LinkButtons extends React.Component {

@@ -42,16 +42,34 @@
 	a& {
 		&.disabled,
 		fieldset[disabled] & {
-		  pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+		  pointer-events: none; // disabling of clicks on `<a>` elements
 		}
 	}
 
 	&.rui-button-primary {
 		.button-variant(@btn-primary-color, @btn-primary-bg, @btn-primary-border);
+		&.button-o {
+			color: @brand-primary;
+
+			&:hover,
+			&:focus {
+				color: @body-bg;
+				text-decoration: none;
+			}
+		}
 	}
 
 	&.rui-button-danger {
 		.button-variant(@btn-danger-color, @btn-danger-bg, @btn-danger-border);
+		&.button-o {
+			color: @brand-danger;
+
+			&:hover,
+			&:focus {
+				color: @body-bg;
+				text-decoration: none;
+			}
+		}
 	}
 
 	// Button sizes

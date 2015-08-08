@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from './Button/Button';
+import {Button} from './Comp/Button';
 import CodeBlock from './CodeBlock';
 
 class Buttons extends React.Component {
@@ -10,9 +10,9 @@ class Buttons extends React.Component {
 		let moduleUsage = 
 			'import React from \'react\';\n' +
 			'//Import Button Component\n'+
-			'import {Button} from \'./Button/Button\';\n';
+			'import {Button} from \'./Button/Button\';\n',
 
-		let usageCode =
+		usageCode =
 			'//Button Normal\n' +
 			'<Button className="rui-button-primary" btnText="Save" clickBtn={this.handleClick} />\n' +
 			'<Button btnText="Cancel" clickBtn={this.handleClick} /> \n' +
@@ -21,7 +21,12 @@ class Buttons extends React.Component {
 			'//Button Small\n' +
 			'<Button className="rui-button-primary rui-button-sm" btnText="Save" clickBtn={this.handleClick} />\n' +
 			'<Button className="rui-button-sm" btnText="Cancel" clickBtn={this.handleClick} /> \n' +
-			'<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />\n';
+			'<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />\n',
+		borderButton = 
+			'//Border only buttons\n' +
+			'<Button className="rui-button-primary button-o" btnText="Save" clickBtn={this.handleClick} />\n' +
+			'<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} />\n' +
+			'<Button className="rui-button-danger button-o" btnText="Delete" clickBtn={this.handleClick} />';
 		return (
 			<div>
 				<h1>Buttons</h1>
@@ -37,6 +42,11 @@ class Buttons extends React.Component {
 					<Button className="rui-button-primary rui-button-sm" btnText="Save" clickBtn={this.handleClick} />
 					<Button className="rui-button-sm" btnText="Cancel" clickBtn={this.handleClick} /> 
 					<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />
+					<br /><br />
+					<p className="help">Border only buttons</p>
+					<Button className="rui-button-primary button-o" btnText="Save" clickBtn={this.handleClick} />
+					<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} /> 
+					<Button className="rui-button-danger button-o" btnText="Delete" clickBtn={this.handleClick} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>
@@ -44,6 +54,9 @@ class Buttons extends React.Component {
 					</CodeBlock>
 					<CodeBlock>
 						{usageCode}
+					</CodeBlock>
+					<CodeBlock>
+						{borderButton}
 					</CodeBlock>
 				</div>
 			</div>

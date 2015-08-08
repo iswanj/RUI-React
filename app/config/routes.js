@@ -4,6 +4,7 @@ import Color from '../components/Color';
 import Typography from '../components/Typography';
 import Buttons from '../components/Buttons';
 import LinkButtons from '../components/LinkButtons';
+import Badges from '../components/Badges';
 //<Route name="profile" path="buttons" handler={Buttons} />
 
 import {Router, DefaultRoute, Route} from 'react-router';
@@ -14,5 +15,6 @@ export default (
 		<Route name="typography" path="typography" handler={Typography} />
 		<Route name="buttons" path="buttons" handler={Buttons} />
 		<Route name="linkbutons" path="linkbutons" handler={LinkButtons} />
+		<Route name="badges" path="badges" handler={Badges} />
 	</Route>
 );
