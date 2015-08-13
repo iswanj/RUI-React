@@ -5,6 +5,9 @@ class Dialog extends React.Component {
 	static openDialog(selector){
 		let El = document.querySelector(selector);
 		El.style.display = "block";
+
+		let body = document.querySelector('body');
+		body.classList.add('dialog-open');
 	}
 
 	static closeDialogOutSide(){
@@ -12,6 +15,9 @@ class Dialog extends React.Component {
 		for ( let el of Array.from(Els) ) {
             el.style.display = "none";
         }
+
+        let body = document.querySelector('body');
+		body.classList.remove('dialog-open');
 	}
 
 	closeDialog(e){
@@ -20,6 +26,9 @@ class Dialog extends React.Component {
 		for ( let el of Array.from(Els) ) {
             el.style.display = "none";
         }
+
+        let body = document.querySelector('body');
+		body.classList.remove('dialog-open');
 	}
 
 	stopDialogClickHandler(e){

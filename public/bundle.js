@@ -25706,6 +25706,9 @@
 						}
 					}
 				}
+
+				var body = document.querySelector('body');
+				body.classList.remove('dialog-open');
 			}
 		}, {
 			key: 'stopDialogClickHandler',
@@ -25748,6 +25751,9 @@
 			value: function openDialog(selector) {
 				var El = document.querySelector(selector);
 				El.style.display = "block";
+
+				var body = document.querySelector('body');
+				body.classList.add('dialog-open');
 			}
 		}, {
 			key: 'closeDialogOutSide',
@@ -25777,6 +25783,9 @@
 						}
 					}
 				}
+
+				var body = document.querySelector('body');
+				body.classList.remove('dialog-open');
 			}
 		}]);
 
