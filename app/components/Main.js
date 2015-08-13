@@ -13,11 +13,11 @@ class Main extends React.Component{
 						<li><a href="#/buttons">Buttons</a></li>
 						<li><a href="#/linkbutons">Link Buttons</a></li>
 						<li><a href="#/badges">Badges</a></li>
-						<li><a href="#/forms">Forms</a></li>
+						<li><a href="#/dialog">Dialog</a></li>
+						<li><a href="#/form">Form</a></li>
 						<li><a href="#/cards">Cards</a></li>
 						<li><a href="#/avatars">Avatars</a></li>
 						<li><a href="#/messages">Messages</a></li>
-						<li><a href="#/#/dialog">Dialog</a></li>
 						<li><a href="#/tabs">Tabs</a></li>
 					</ul>
 				</div>

@@ -7,7 +7,7 @@ class LinkButtons extends React.Component {
 		let moduleUsage = 
 			'import React from \'react\';\n' +
 			'//Import LinkButton Component\n'+
-			'import {LinkButton} from \'./Button\';\n';
+			'import {LinkButton} from \'./Comp/Button\';\n';
 
 		let usageCode =
 			'//Button Normal\n' +

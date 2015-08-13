@@ -10,7 +10,7 @@ class Buttons extends React.Component {
 		let moduleUsage = 
 			'import React from \'react\';\n' +
 			'//Import Button Component\n'+
-			'import {Button} from \'./Button/Button\';\n',
+			'import {Button} from \'./Comp/Button\';\n',
 
 		usageCode =
 			'//Button Normal\n' +

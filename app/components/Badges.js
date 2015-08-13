@@ -4,7 +4,11 @@ import CodeBlock from './CodeBlock';
 
 class Badges extends React.Component {
 	render() {
-		let badgesCode = 
+		let moduleUsage = 
+					'import React from \'react\';\n' +
+					'//Import Button Component\n'+
+					'import Badge from \'./Comp/Badge\';\n',
+		badgesCode = 
 					'<Badge className="rui-badges-completed" label="Completed" />\n'+
 					'<Badge className="rui-badges-success" label="Accepted" />\n'+
 					'<Badge className="rui-badges-info" label="info" />\n'+
@@ -40,6 +44,9 @@ class Badges extends React.Component {
 					<Badge className="rui-badges-o" label="Default" />
 				</div>
 				<div className="example-code">
+					<CodeBlock>
+						{moduleUsage}
+					</CodeBlock>
 					<CodeBlock>
 						{badgesCode}
 					</CodeBlock>

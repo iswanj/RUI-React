@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "axios": "^0.5.4",
+    "jqlite": "^0.2.10",
     "react": "^0.13.3",
     "react-router": "^0.13.3"
   }
