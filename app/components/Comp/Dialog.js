@@ -1,32 +1,35 @@
 import React from 'react';
 
 class Dialog extends React.Component {
-
+	//Open dialog (From out side)
 	static openDialog(selector){
 		let El = document.querySelector(selector);
 		El.style.display = "block";
 
+		//disable body scrollbar
 		let body = document.querySelector('body');
 		body.classList.add('dialog-open');
 	}
 
+	//Close dialog out side from this component
 	static closeDialogOutSide(){
-		let Els = document.querySelectorAll('.rui-dialog');
-		for ( let el of Array.from(Els) ) {
+		let elDialogs = document.querySelectorAll('.rui-dialog');
+		for ( let el of Array.from(elDialogs) ) {
             el.style.display = "none";
         }
-
+        //re-active body scrollbar
         let body = document.querySelector('body');
 		body.classList.remove('dialog-open');
 	}
 
 	closeDialog(e){
 		e.preventDefault();
-		let Els = document.querySelectorAll('.rui-dialog');
-		for ( let el of Array.from(Els) ) {
+		let elDialogs = document.querySelectorAll('.rui-dialog');
+		for ( let el of Array.from(elDialogs) ) {
             el.style.display = "none";
         }
 
+        //re-active body scrollbar
         let body = document.querySelector('body');
 		body.classList.remove('dialog-open');
 	}

@@ -57,8 +57,8 @@ class Dialogs extends React.Component {
 				<p className="help">( Core Components )</p>
 				<div className="example">
 					<p className="head">Example</p>
-					<Button className="rui-button-primary" btnText="Open Dialog" clickBtn={this.openDialog.bind(this)} />
-					<Button className="rui-button-danger button-o" btnText="Open Error Dialog" clickBtn={this.openErrorDialog.bind(this)} />
+					<Button className="rui-button-primary" btnText="Open Dialog" clickBtn={this.openDialog} />
+					<Button className="rui-button-danger button-o" btnText="Open Error Dialog" clickBtn={this.openErrorDialog} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>
@@ -83,7 +83,7 @@ class Dialogs extends React.Component {
 						Dialog body
 					</div>
 					<div className="dialog-footer">
-						<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>
+						<button className="rui-button right" onClick={this.closeD}>Close</button>
 					</div>
                 </Dialog>
 
@@ -92,7 +92,7 @@ class Dialogs extends React.Component {
 						Danger dialog body
 					</div>
 					<div className="dialog-footer">
-						<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>
+						<button className="rui-button right" onClick={this.closeD}>Close</button>
 					</div>
 				</Dialog>
 			</div>

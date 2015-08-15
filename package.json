@@ -4,6 +4,7 @@
   "description": "React components library",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "axios": "^0.5.4",
+    "express": "^4.13.3",
     "jqlite": "^0.2.10",
     "react": "^0.13.3",
     "react-router": "^0.13.3"

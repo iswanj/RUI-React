@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouteHandler } from 'react-router';
+import Badge from './Comp/Badge';
 import './less/style.less';
 
 class Main extends React.Component{
@@ -13,11 +14,11 @@ class Main extends React.Component{
 						<li><a href="#/buttons">Buttons</a></li>
 						<li><a href="#/linkbutons">Link Buttons</a></li>
 						<li><a href="#/badges">Badges</a></li>
-						<li><a href="#/dialog">Dialog</a></li>
+						<li><a href="#/dialog">Dialog</a> <Badge className="rui-badges-warning-o" label="experiment" /> </li>
+						<li><a href="#/messages">Messages</a></li>
 						<li><a href="#/form">Form</a></li>
 						<li><a href="#/cards">Cards</a></li>
 						<li><a href="#/avatars">Avatars</a></li>
-						<li><a href="#/messages">Messages</a></li>
 						<li><a href="#/tabs">Tabs</a></li>
 					</ul>
 				</div>

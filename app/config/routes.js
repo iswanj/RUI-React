@@ -7,6 +7,7 @@ import LinkButtons from '../components/LinkButtons';
 import Badges from '../components/Badges';
 import Form from '../components/Form';
 import Dialog from '../components/Dialogs';
+import Messages from '../components/Messages';
 //<Route name="profile" path="buttons" handler={Buttons} />
 
 import {Router, DefaultRoute, Route} from 'react-router';
@@ -20,5 +21,6 @@ export default (
 		<Route name="badges" path="badges" handler={Badges} />
 		<Route name="form" path="form" handler={Form} />
 		<Route name="dialog" path="dialog" handler={Dialog} />
+		<Route name="messages" path="messages" handler={Messages} />
 	</Route>
 );

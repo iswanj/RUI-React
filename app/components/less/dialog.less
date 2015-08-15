@@ -80,3 +80,27 @@
 .dialog-open {
 	overflow: hidden;
 }
+
+/* Animation */
+
+.rui-dialog-anim-enter {
+    opacity: 0.00;
+    transform: scale(0.7);
+    transition: all 0.2s;
+}
+
+.rui-dialog-anim-enter.rui-dialog-anim-enter-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rui-dialog-anim-leave {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.2s;
+}
+
+.rui-dialog-anim-leave.rui-dialog-anim-leave-active {
+    opacity: 0.00;
+    transform: scale(0.7);
+}
