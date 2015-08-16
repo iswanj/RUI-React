@@ -23618,11 +23618,11 @@
 
 	var _componentsForm2 = _interopRequireDefault(_componentsForm);
 
-	var _componentsDialogs = __webpack_require__(238);
+	var _componentsDialogs = __webpack_require__(237);
 
 	var _componentsDialogs2 = _interopRequireDefault(_componentsDialogs);
 
-	var _componentsMessages = __webpack_require__(240);
+	var _componentsMessages = __webpack_require__(239);
 
 	var _componentsMessages2 = _interopRequireDefault(_componentsMessages);
 
@@ -25311,7 +25311,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CompFormElements = __webpack_require__(237);
+	var _CompFormElements = __webpack_require__(242);
 
 	var Form = (function (_React$Component) {
 		_inherits(Form, _React$Component);
@@ -25324,9 +25324,12 @@
 
 		_createClass(Form, [{
 			key: 'handleChange',
-			value: function handleChange() {
-				var text = this.refs.multiSelect.getValue();
-				console.log(text);
+			value: function handleChange(e) {
+				e.preventDefault();
+				var text1 = this.refs.check1.getValue();
+				var text2 = this.refs.check2.getValue();
+				var text3 = this.refs.check3.getValue();
+				console.log(text1 + ' - ' + text2 + ' - ' + text3);
 			}
 		}, {
 			key: 'render',
@@ -25359,7 +25362,7 @@
 						),
 						_react2['default'].createElement(
 							'form',
-							{ className: 'rui-form' },
+							{ className: 'rui-form', onSubmit: this.handleChange.bind(this) },
 							_react2['default'].createElement(_CompFormElements.Input, { type: 'text',
 								className: 'additional_class',
 								label: 'Default input',
@@ -25491,6 +25494,70 @@
 									{ value: 'opt6' },
 									'option six'
 								)
+							),
+							_react2['default'].createElement(
+								'h3',
+								null,
+								'Radio buttons'
+							),
+							_react2['default'].createElement(
+								'fieldset',
+								{ className: 'group' },
+								_react2['default'].createElement(
+									'legend',
+									null,
+									_react2['default'].createElement(
+										'span',
+										null,
+										'Radio buttons'
+									)
+								),
+								_react2['default'].createElement(_CompFormElements.Input, { type: 'radio',
+									label: 'Save as a blog post',
+									defaultChecked: 'checked',
+									name: 'radioButtons',
+									id: 'radioButtons'
+								}),
+								_react2['default'].createElement(_CompFormElements.Input, { type: 'radio',
+									label: 'Save as a page',
+									name: 'radioButtons',
+									id: 'radioButtonTwo'
+								}),
+								_react2['default'].createElement(_CompFormElements.Input, { type: 'radio',
+									label: 'Save to your drafts',
+									name: 'radioButtons',
+									id: 'radioButtonThree'
+								})
+							),
+							_react2['default'].createElement(
+								'h3',
+								null,
+								'Checkboxes'
+							),
+							_react2['default'].createElement(
+								'fieldset',
+								{ className: 'group' },
+								_react2['default'].createElement(
+									'legend',
+									null,
+									_react2['default'].createElement(
+										'span',
+										null,
+										'Checkboxes'
+									)
+								),
+								_react2['default'].createElement(_CompFormElements.Input, { type: 'checkbox',
+									label: 'Receive email',
+									id: 'checkBoxOne'
+								}),
+								_react2['default'].createElement(_CompFormElements.Input, { type: 'checkbox',
+									label: 'Receive push notification',
+									id: 'checkBoxTwo'
+								}),
+								_react2['default'].createElement(_CompFormElements.Input, { type: 'checkbox',
+									label: 'Receive in-app notification',
+									id: 'checkBoxThree'
+								})
 							)
 						)
 					)
@@ -25506,198 +25573,6 @@
 
 /***/ },
 /* 237 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(25);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var Input = (function (_React$Component) {
-		_inherits(Input, _React$Component);
-
-		function Input() {
-			_classCallCheck(this, Input);
-
-			_get(Object.getPrototypeOf(Input.prototype), 'constructor', this).call(this);
-			this.textType = ['text', 'password', 'date', 'number'];
-		}
-
-		//Set input value
-
-		_createClass(Input, [{
-			key: 'getValue',
-			value: function getValue() {
-				if (this.textType.indexOf(this.props.type) > -1) {
-					return _react2['default'].findDOMNode(this.refs.input).value;
-				} else if (this.props.type === 'textarea') {
-					return _react2['default'].findDOMNode(this.refs.textarea).value;
-				} else if (this.props.type === 'select') {
-					return _react2['default'].findDOMNode(this.refs.select).value;
-				} else if (this.props.type === 'multi-select') {
-					// send all selected values
-					var node = _react2['default'].findDOMNode(this.refs.multiSelect);
-					var options = [].slice.call(node.querySelectorAll('option'));
-					var selected = options.filter(function (option) {
-						return option.selected;
-					});
-					var selectedValues = selected.map(function (option) {
-						return option.value;
-					});
-					return selectedValues;
-				} else {
-					return 'invalid input type';
-				}
-			}
-
-			//get input description
-		}, {
-			key: 'getDescription',
-			value: function getDescription() {
-				if (this.props.description != '') {
-					return this.description = _react2['default'].createElement(
-						'div',
-						{ className: 'description' },
-						this.props.description
-					);
-				}
-			}
-		}, {
-			key: 'getRequiredIcon',
-			value: function getRequiredIcon() {
-				if (this.props.required == true) {
-					return this.req_star = _react2['default'].createElement(
-						'i',
-						{ className: 'material-icons' },
-						'star'
-					);
-				}
-			}
-		}, {
-			key: 'renderTextInput',
-			value: function renderTextInput() {
-
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'input-group' },
-					_react2['default'].createElement(
-						'label',
-						{ htmlFor: this.props.id },
-						this.props.label,
-						' ',
-						this.getRequiredIcon()
-					),
-					_react2['default'].createElement('input', _extends({}, this.props, { className: 'text ' + this.props.className, ref: 'input' })),
-					this.getDescription()
-				);
-			}
-		}, {
-			key: 'renderTextArea',
-			value: function renderTextArea() {
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'input-group' },
-					_react2['default'].createElement(
-						'label',
-						{ htmlFor: this.props.id },
-						this.props.label,
-						' ',
-						this.getRequiredIcon()
-					),
-					_react2['default'].createElement('textarea', _extends({}, this.props, { className: 'textarea ' + this.props.className, ref: 'textarea' })),
-					this.getDescription()
-				);
-			}
-		}, {
-			key: 'renderDropdown',
-			value: function renderDropdown() {
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'input-group' },
-					_react2['default'].createElement(
-						'label',
-						{ htmlFor: this.props.id },
-						this.props.label,
-						' ',
-						this.getRequiredIcon()
-					),
-					_react2['default'].createElement(
-						'select',
-						_extends({}, this.props, { className: 'select ' + this.props.className, ref: 'select' }),
-						this.props.children
-					)
-				);
-			}
-		}, {
-			key: 'renderMultiSelect',
-			value: function renderMultiSelect() {
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'input-group' },
-					_react2['default'].createElement(
-						'label',
-						{ htmlFor: this.props.id },
-						this.props.label,
-						' ',
-						this.getRequiredIcon()
-					),
-					_react2['default'].createElement(
-						'select',
-						_extends({}, this.props, { className: 'multi-select ' + this.props.className, ref: 'multiSelect' }),
-						this.props.children
-					)
-				);
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				if (this.textType.indexOf(this.props.type) > -1) {
-					return this.renderTextInput();
-				} else if (this.props.type === 'textarea') {
-					return this.renderTextArea();
-				} else if (this.props.type === 'select') {
-					return this.renderDropdown();
-				} else if (this.props.type === 'multi-select') {
-					return this.renderMultiSelect();
-				} else {
-					return _react2['default'].createElement(
-						'div',
-						null,
-						'Invalid type value'
-					);
-				}
-			}
-		}]);
-
-		return Input;
-	})(_react2['default'].Component);
-
-	Text.propTypes = {
-		label: _react2['default'].PropTypes.string.isRequired,
-		id: _react2['default'].PropTypes.string.isRequired
-	};
-
-	exports.Input = Input;
-
-/***/ },
-/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25722,7 +25597,7 @@
 
 	var _CompButton = __webpack_require__(233);
 
-	var _CompDialog = __webpack_require__(239);
+	var _CompDialog = __webpack_require__(238);
 
 	var _CompDialog2 = _interopRequireDefault(_CompDialog);
 
@@ -25863,7 +25738,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 239 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26022,7 +25897,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 240 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26045,11 +25920,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CompMessage = __webpack_require__(241);
+	var _CompMessage = __webpack_require__(240);
 
 	var _CompMessage2 = _interopRequireDefault(_CompMessage);
 
-	var _CompToaster = __webpack_require__(242);
+	var _CompToaster = __webpack_require__(241);
 
 	var _CodeBlock = __webpack_require__(231);
 
@@ -26282,7 +26157,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 241 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26371,7 +26246,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 242 */
+/* 241 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -26483,6 +26358,234 @@
 
 	var Toaster = new Toast();
 	exports.Toaster = Toaster;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Input = (function (_React$Component) {
+		_inherits(Input, _React$Component);
+
+		function Input() {
+			_classCallCheck(this, Input);
+
+			_get(Object.getPrototypeOf(Input.prototype), 'constructor', this).call(this);
+			this.textType = ['text', 'password', 'date', 'number'];
+		}
+
+		//Set input value
+
+		_createClass(Input, [{
+			key: 'getValue',
+			value: function getValue() {
+				if (this.textType.indexOf(this.props.type) > -1) {
+					return _react2['default'].findDOMNode(this.refs.input).value;
+				} else if (this.props.type === 'textarea') {
+					return _react2['default'].findDOMNode(this.refs.textarea).value;
+				} else if (this.props.type === 'select') {
+					return _react2['default'].findDOMNode(this.refs.select).value;
+				} else if (this.props.type === 'multi-select') {
+					// send all selected values
+					var node = _react2['default'].findDOMNode(this.refs.multiSelect);
+					var options = [].slice.call(node.querySelectorAll('option'));
+					var selected = options.filter(function (option) {
+						return option.selected;
+					});
+					var selectedValues = selected.map(function (option) {
+						return option.value;
+					});
+					return selectedValues;
+				} else if (this.props.type === 'radio') {
+					return _react2['default'].findDOMNode(this.refs.radio).checked;
+				} else if (this.props.type === 'checkbox') {
+					return _react2['default'].findDOMNode(this.refs.checkbox).checked;
+				} else {
+					return 'invalid input type';
+				}
+			}
+
+			//get input description
+		}, {
+			key: 'getDescription',
+			value: function getDescription() {
+				if (this.props.description != '') {
+					return this.description = _react2['default'].createElement(
+						'div',
+						{ className: 'description' },
+						this.props.description
+					);
+				}
+			}
+		}, {
+			key: 'getRequiredIcon',
+			value: function getRequiredIcon() {
+				if (this.props.required == true) {
+					return this.req_star = _react2['default'].createElement(
+						'i',
+						{ className: 'material-icons' },
+						'star'
+					);
+				}
+			}
+		}, {
+			key: 'renderTextInput',
+			value: function renderTextInput() {
+
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label,
+						' ',
+						this.getRequiredIcon()
+					),
+					_react2['default'].createElement('input', _extends({}, this.props, { className: 'text ' + this.props.className, ref: 'input' })),
+					this.getDescription()
+				);
+			}
+		}, {
+			key: 'renderTextArea',
+			value: function renderTextArea() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label,
+						' ',
+						this.getRequiredIcon()
+					),
+					_react2['default'].createElement('textarea', _extends({}, this.props, { className: 'textarea ' + this.props.className, ref: 'textarea' })),
+					this.getDescription()
+				);
+			}
+		}, {
+			key: 'renderDropdown',
+			value: function renderDropdown() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label,
+						' ',
+						this.getRequiredIcon()
+					),
+					_react2['default'].createElement(
+						'select',
+						_extends({}, this.props, { className: 'select ' + this.props.className, ref: 'select' }),
+						this.props.children
+					)
+				);
+			}
+		}, {
+			key: 'renderMultiSelect',
+			value: function renderMultiSelect() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label,
+						' ',
+						this.getRequiredIcon()
+					),
+					_react2['default'].createElement(
+						'select',
+						_extends({}, this.props, { className: 'multi-select ' + this.props.className, ref: 'multiSelect' }),
+						this.props.children
+					)
+				);
+			}
+		}, {
+			key: 'renderRadio',
+			value: function renderRadio() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'radio' },
+					_react2['default'].createElement('input', _extends({}, this.props, { className: 'radio ' + this.props.className, ref: 'radio' })),
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label
+					)
+				);
+			}
+		}, {
+			key: 'renderCheckBox',
+			value: function renderCheckBox() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'checkbox' },
+					_react2['default'].createElement('input', _extends({}, this.props, { className: 'checkbox ' + this.props.className, ref: 'checkbox' })),
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label
+					)
+				);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				if (this.textType.indexOf(this.props.type) > -1) {
+					return this.renderTextInput();
+				} else if (this.props.type === 'textarea') {
+					return this.renderTextArea();
+				} else if (this.props.type === 'select') {
+					return this.renderDropdown();
+				} else if (this.props.type === 'multi-select') {
+					return this.renderMultiSelect();
+				} else if (this.props.type === 'radio') {
+					return this.renderRadio();
+				} else if (this.props.type === 'checkbox') {
+					return this.renderCheckBox();
+				} else {
+					return _react2['default'].createElement(
+						'div',
+						null,
+						'Invalid type value'
+					);
+				}
+			}
+		}]);
+
+		return Input;
+	})(_react2['default'].Component);
+
+	Text.propTypes = {
+		label: _react2['default'].PropTypes.string.isRequired,
+		id: _react2['default'].PropTypes.string.isRequired
+	};
+
+	exports.Input = Input;
 
 /***/ }
 /******/ ]);

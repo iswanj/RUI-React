@@ -2,9 +2,12 @@ import React from 'react';
 import {Input} from './Comp/FormElements';
 
 class Form extends React.Component {
-	handleChange(){
-		let text = this.refs.multiSelect.getValue();
-		console.log(text);
+	handleChange(e){
+		e.preventDefault();
+		let text1 = this.refs.check1.getValue();
+		let text2 = this.refs.check2.getValue();
+		let text3 = this.refs.check3.getValue();
+		console.log(text1 +' - '+ text2 +' - '+ text3);
 	}
 	render() {
 		return (
@@ -14,7 +17,7 @@ class Form extends React.Component {
 				<div className="example">
 					<p className="head">Example</p>
 					<h4>Text Input</h4>
-					<form className="rui-form">
+					<form className="rui-form" onSubmit={this.handleChange.bind(this)}>
 						<Input type="text"
 							className="additional_class"
 							label="Default input"
@@ -81,6 +84,42 @@ class Form extends React.Component {
 				            <option value="opt5">option five</option>
 				            <option value="opt6">option six</option>
 						</Input>
+						<h3>Radio buttons</h3>
+						<fieldset className="group">
+							<legend><span>Radio buttons</span></legend>
+							<Input type="radio"
+								label="Save as a blog post"
+								defaultChecked="checked"
+								name="radioButtons"
+								id="radioButtons"
+							/>
+							<Input type="radio"
+								label="Save as a page"
+								name="radioButtons"
+								id="radioButtonTwo"
+							/>
+							<Input type="radio"
+								label="Save to your drafts"
+								name="radioButtons"
+								id="radioButtonThree"
+							/>
+						</fieldset>
+						<h3>Checkboxes</h3>
+						<fieldset className="group">
+					        <legend><span>Checkboxes</span></legend>
+					        <Input type="checkbox"
+								label="Receive email"
+								id="checkBoxOne"
+							/>
+							<Input type="checkbox"
+								label="Receive push notification"
+								id="checkBoxTwo"
+							/>
+							<Input type="checkbox"
+								label="Receive in-app notification"
+								id="checkBoxThree"
+							/>
+					    </fieldset>
 					</form>
 				</div>
 			</div>

@@ -24,6 +24,10 @@ class Input extends React.Component {
 		        return option.value;
 		    });
 		    return selectedValues;
+		}else if(this.props.type === 'radio'){
+			return React.findDOMNode(this.refs.radio).checked;
+		}else if(this.props.type === 'checkbox'){
+			return React.findDOMNode(this.refs.checkbox).checked;
 		}else {
 			return 'invalid input type';
 		}
@@ -81,6 +85,22 @@ class Input extends React.Component {
 		    </div>
 		)
 	}
+	renderRadio(){
+		return (
+			<div className="radio">
+				<input {...this.props} className={`radio ${this.props.className}`} ref="radio" />
+				<label htmlFor={this.props.id}>{this.props.label}</label>
+			</div>
+		)
+	}
+	renderCheckBox(){
+		return (
+			<div className="checkbox">
+	            <input {...this.props} className={`checkbox ${this.props.className}`} ref="checkbox" />
+	            <label htmlFor={this.props.id}>{this.props.label}</label>
+	        </div>
+		)
+	}
 	render() {
 		if(this.textType.indexOf(this.props.type) > -1){
 			return this.renderTextInput();
@@ -90,6 +110,10 @@ class Input extends React.Component {
 			return this.renderDropdown();
 		}else if(this.props.type === 'multi-select') {
 			return this.renderMultiSelect();
+		}else if(this.props.type === 'radio'){
+			return this.renderRadio();
+		}else if(this.props.type === 'checkbox'){
+			return this.renderCheckBox();
 		}else {
 			return (
 				<div>Invalid type value</div>
