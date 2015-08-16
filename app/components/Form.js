@@ -3,7 +3,7 @@ import {Input} from './Comp/FormElements';
 
 class Form extends React.Component {
 	handleChange(){
-		let text = this.refs.txt.getValue();
+		let text = this.refs.multiSelect.getValue();
 		console.log(text);
 	}
 	render() {
@@ -51,8 +51,36 @@ class Form extends React.Component {
 						<Input type="textarea"
 							label="Comment"
 							id="inputTextarea"
-							placeholder="Disabled input"
+							placeholder="Your comment here..."
 						/>
+						<h3>Dropdown and multi select</h3>
+						<Input type="select"
+							label="Dropdown"
+							id="inputDropdown"
+						>
+							<option value="">Select</option>
+				            <option value="opt1">Option 1</option>
+				            <option value="opt2">Option 2</option>
+				            <optgroup label="Group 1">
+				                <option value="opts1">Option one</option>
+				                <option value="opts2">Option two</option>
+				            </optgroup>
+				            <option value="opt3">Option 3</option>
+				            <option value="opt4">Option 4</option>
+						</Input>
+						<Input type="multi-select"
+							label="Multi Select"
+							id="inputDropdown"
+							size="4"
+							multiple="multiple"
+						>
+							<option value="opt1">option one</option>
+				            <option value="opt2">option two</option>
+				            <option value="opt3">option three</option>
+				            <option value="opt4">option four</option>
+				            <option value="opt5">option five</option>
+				            <option value="opt6">option six</option>
+						</Input>
 					</form>
 				</div>
 			</div>

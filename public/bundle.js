@@ -25325,7 +25325,7 @@
 		_createClass(Form, [{
 			key: 'handleChange',
 			value: function handleChange() {
-				var text = this.refs.txt.getValue();
+				var text = this.refs.multiSelect.getValue();
 				console.log(text);
 			}
 		}, {
@@ -25400,8 +25400,98 @@
 							_react2['default'].createElement(_CompFormElements.Input, { type: 'textarea',
 								label: 'Comment',
 								id: 'inputTextarea',
-								placeholder: 'Disabled input'
-							})
+								placeholder: 'Your comment here...'
+							}),
+							_react2['default'].createElement(
+								'h3',
+								null,
+								'Dropdown and multi select'
+							),
+							_react2['default'].createElement(
+								_CompFormElements.Input,
+								{ type: 'select',
+									label: 'Dropdown',
+									id: 'inputDropdown'
+								},
+								_react2['default'].createElement(
+									'option',
+									{ value: '' },
+									'Select'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt1' },
+									'Option 1'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt2' },
+									'Option 2'
+								),
+								_react2['default'].createElement(
+									'optgroup',
+									{ label: 'Group 1' },
+									_react2['default'].createElement(
+										'option',
+										{ value: 'opts1' },
+										'Option one'
+									),
+									_react2['default'].createElement(
+										'option',
+										{ value: 'opts2' },
+										'Option two'
+									)
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt3' },
+									'Option 3'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt4' },
+									'Option 4'
+								)
+							),
+							_react2['default'].createElement(
+								_CompFormElements.Input,
+								{ type: 'multi-select',
+									label: 'Multi Select',
+									id: 'inputDropdown',
+									size: '4',
+									multiple: 'multiple'
+								},
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt1' },
+									'option one'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt2' },
+									'option two'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt3' },
+									'option three'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt4' },
+									'option four'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt5' },
+									'option five'
+								),
+								_react2['default'].createElement(
+									'option',
+									{ value: 'opt6' },
+									'option six'
+								)
+							)
 						)
 					)
 				);
@@ -25446,22 +25536,34 @@
 		function Input() {
 			_classCallCheck(this, Input);
 
-			_get(Object.getPrototypeOf(Input.prototype), 'constructor', this).apply(this, arguments);
+			_get(Object.getPrototypeOf(Input.prototype), 'constructor', this).call(this);
+			this.textType = ['text', 'password', 'date', 'number'];
 		}
+
+		//Set input value
 
 		_createClass(Input, [{
 			key: 'getValue',
-
-			//Set input value
 			value: function getValue() {
-				switch (this.props.type) {
-					case 'text':
-						return _react2['default'].findDOMNode(this.refs.input).value;
-						break;
-					case 'textarea':
-						return _react2['default'].findDOMNode(this.refs.textarea).value;
-					default:
-						return 'invalid input type';
+				if (this.textType.indexOf(this.props.type) > -1) {
+					return _react2['default'].findDOMNode(this.refs.input).value;
+				} else if (this.props.type === 'textarea') {
+					return _react2['default'].findDOMNode(this.refs.textarea).value;
+				} else if (this.props.type === 'select') {
+					return _react2['default'].findDOMNode(this.refs.select).value;
+				} else if (this.props.type === 'multi-select') {
+					// send all selected values
+					var node = _react2['default'].findDOMNode(this.refs.multiSelect);
+					var options = [].slice.call(node.querySelectorAll('option'));
+					var selected = options.filter(function (option) {
+						return option.selected;
+					});
+					var selectedValues = selected.map(function (option) {
+						return option.value;
+					});
+					return selectedValues;
+				} else {
+					return 'invalid input type';
 				}
 			}
 
@@ -25502,7 +25604,7 @@
 						' ',
 						this.getRequiredIcon()
 					),
-					_react2['default'].createElement('input', _extends({}, this.props, { className: 'text ' + this.props.className, type: 'text', ref: 'input' })),
+					_react2['default'].createElement('input', _extends({}, this.props, { className: 'text ' + this.props.className, ref: 'input' })),
 					this.getDescription()
 				);
 			}
@@ -25519,17 +25621,67 @@
 						' ',
 						this.getRequiredIcon()
 					),
-					_react2['default'].createElement('textarea', _extends({}, this.props, { className: 'textarea ' + this.props.className, name: 'comment', id: 'textarea', placeholder: 'Your comment here...', ref: 'textarea' })),
+					_react2['default'].createElement('textarea', _extends({}, this.props, { className: 'textarea ' + this.props.className, ref: 'textarea' })),
 					this.getDescription()
+				);
+			}
+		}, {
+			key: 'renderDropdown',
+			value: function renderDropdown() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label,
+						' ',
+						this.getRequiredIcon()
+					),
+					_react2['default'].createElement(
+						'select',
+						_extends({}, this.props, { className: 'select ' + this.props.className, ref: 'select' }),
+						this.props.children
+					)
+				);
+			}
+		}, {
+			key: 'renderMultiSelect',
+			value: function renderMultiSelect() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label,
+						' ',
+						this.getRequiredIcon()
+					),
+					_react2['default'].createElement(
+						'select',
+						_extends({}, this.props, { className: 'multi-select ' + this.props.className, ref: 'multiSelect' }),
+						this.props.children
+					)
 				);
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				if (this.props.type == 'text') {
+				if (this.textType.indexOf(this.props.type) > -1) {
 					return this.renderTextInput();
-				} else if (this.props.type == 'textarea') {
+				} else if (this.props.type === 'textarea') {
 					return this.renderTextArea();
+				} else if (this.props.type === 'select') {
+					return this.renderDropdown();
+				} else if (this.props.type === 'multi-select') {
+					return this.renderMultiSelect();
+				} else {
+					return _react2['default'].createElement(
+						'div',
+						null,
+						'Invalid type value'
+					);
 				}
 			}
 		}]);
