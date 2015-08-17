@@ -9,6 +9,7 @@ import Form from '../components/Form';
 import Dialog from '../components/Dialogs';
 import Messages from '../components/Messages';
 import Cards from '../components/Cards';
+import Avatars from '../components/Avatars';
 //<Route name="profile" path="buttons" handler={Buttons} />
 
 import {Router, DefaultRoute, Route} from 'react-router';
@@ -24,5 +25,6 @@ export default (
 		<Route name="dialog" path="dialog" handler={Dialog} />
 		<Route name="messages" path="messages" handler={Messages} />
 		<Route name="cards" path="cards" handler={Cards} />
+		<Route name="avatars" path="avatars" handler={Avatars} />
 	</Route>
 );

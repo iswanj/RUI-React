@@ -24,7 +24,8 @@ class Cards extends React.Component {
 			'</Card>';
 		return (
 			<div>
-				<h1>Dialog</h1>
+				<h1>Card</h1>
+				<p>Uses cards only to outline certain sections of your content, which can be styled differently.</p>
 				<p className="help">( Core Components )</p>
 				<div className="example">
 					<p className="head">Example</p>

@@ -134,6 +134,7 @@ class Form extends React.Component {
 		return (
 			<div>
 				<h1>Form</h1>
+				<p>Forms are used to collect user inputs.</p>
 				<p className="help">( Core Components )</p>
 				<div className="example">
 					<p className="head">Example</p>

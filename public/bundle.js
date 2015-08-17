@@ -23630,6 +23630,10 @@
 
 	var _componentsCards2 = _interopRequireDefault(_componentsCards);
 
+	var _componentsAvatars = __webpack_require__(245);
+
+	var _componentsAvatars2 = _interopRequireDefault(_componentsAvatars);
+
 	//<Route name="profile" path="buttons" handler={Buttons} />
 
 	var _reactRouter = __webpack_require__(181);
@@ -23645,7 +23649,8 @@
 		_react2['default'].createElement(_reactRouter.Route, { name: 'form', path: 'form', handler: _componentsForm2['default'] }),
 		_react2['default'].createElement(_reactRouter.Route, { name: 'dialog', path: 'dialog', handler: _componentsDialogs2['default'] }),
 		_react2['default'].createElement(_reactRouter.Route, { name: 'messages', path: 'messages', handler: _componentsMessages2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'cards', path: 'cards', handler: _componentsCards2['default'] })
+		_react2['default'].createElement(_reactRouter.Route, { name: 'cards', path: 'cards', handler: _componentsCards2['default'] }),
+		_react2['default'].createElement(_reactRouter.Route, { name: 'avatars', path: 'avatars', handler: _componentsAvatars2['default'] })
 	);
 	module.exports = exports['default'];
 
@@ -25368,6 +25373,11 @@
 					),
 					_react2['default'].createElement(
 						'p',
+						null,
+						'Forms are used to collect user inputs.'
+					),
+					_react2['default'].createElement(
+						'p',
 						{ className: 'help' },
 						'( Core Components )'
 					),
@@ -26819,7 +26829,12 @@
 					_react2['default'].createElement(
 						'h1',
 						null,
-						'Dialog'
+						'Card'
+					),
+					_react2['default'].createElement(
+						'p',
+						null,
+						'Uses cards only to outline certain sections of your content, which can be styled differently.'
 					),
 					_react2['default'].createElement(
 						'p',
@@ -26942,6 +26957,181 @@
 
 	exports['default'] = Card;
 	module.exports = exports['default'];
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _CompAvatar = __webpack_require__(246);
+
+	var _CompAvatar2 = _interopRequireDefault(_CompAvatar);
+
+	var _CodeBlock = __webpack_require__(231);
+
+	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
+
+	var Avatars = (function (_React$Component) {
+		_inherits(Avatars, _React$Component);
+
+		function Avatars() {
+			_classCallCheck(this, Avatars);
+
+			_get(Object.getPrototypeOf(Avatars.prototype), 'constructor', this).apply(this, arguments);
+		}
+
+		_createClass(Avatars, [{
+			key: 'render',
+			value: function render() {
+				var styles = {
+					marginRight: '.4em'
+				},
+				    moduleUsage = 'import React from \'react\';\n' + '//Import Avatar Component\n' + 'import Avatar from \'./Comp/Avatar\';\n',
+				    codeSample = '<Avatar style={styles} id="imageId" size="xsm" imgSrc="./img/avatar.png" />\n' + '<Avatar style={styles} size="sm" imgSrc="./img/avatar.png" />\n' + '<Avatar style={styles} size="lg" imgSrc="./img/avatar.png" />\n' + '<Avatar style={styles} size="xlg" imgSrc="./img/avatar.png" />\n' + '<Avatar style={styles} size="xxlg" imgSrc="./img/avatar.png" />';
+				return _react2['default'].createElement(
+					'div',
+					null,
+					_react2['default'].createElement(
+						'h1',
+						null,
+						'Avatars'
+					),
+					_react2['default'].createElement(
+						'p',
+						{ className: 'help' },
+						'( Core Components )'
+					),
+					_react2['default'].createElement(
+						'p',
+						null,
+						_react2['default'].createElement(
+							'strong',
+							null,
+							'Available Sizes: '
+						),
+						' xsm, sm, lg, xlg, xxlg'
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'p',
+							{ className: 'head' },
+							'Example'
+						),
+						_react2['default'].createElement(_CompAvatar2['default'], { style: styles, id: 'imageId', size: 'xsm', imgSrc: './img/avatar.png' }),
+						_react2['default'].createElement(_CompAvatar2['default'], { style: styles, size: 'sm', imgSrc: './img/avatar.png' }),
+						_react2['default'].createElement(_CompAvatar2['default'], { style: styles, size: 'lg', imgSrc: './img/avatar.png' }),
+						_react2['default'].createElement(_CompAvatar2['default'], { style: styles, size: 'xlg', imgSrc: './img/avatar.png' }),
+						_react2['default'].createElement(_CompAvatar2['default'], { style: styles, size: 'xxlg', imgSrc: './img/avatar.png' })
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							moduleUsage
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							codeSample
+						)
+					)
+				);
+			}
+		}]);
+
+		return Avatars;
+	})(_react2['default'].Component);
+
+	exports['default'] = Avatars;
+	module.exports = exports['default'];
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Avatar = (function (_React$Component) {
+		_inherits(Avatar, _React$Component);
+
+		function Avatar() {
+			_classCallCheck(this, Avatar);
+
+			_get(Object.getPrototypeOf(Avatar.prototype), "constructor", this).apply(this, arguments);
+		}
+
+		_createClass(Avatar, [{
+			key: "render",
+			value: function render() {
+				var _props = this.props;
+				var style = _props.style;
+				var size = _props.size;
+				var imgSrc = _props.imgSrc;
+
+				var props = _objectWithoutProperties(_props, ["style", "size", "imgSrc"]);
+
+				return _react2["default"].createElement(
+					"span",
+					{ style: style, className: "rui-avatar rui-avatar-" + size },
+					_react2["default"].createElement(
+						"span",
+						{ className: "rui-avatar-img" },
+						_react2["default"].createElement("img", _extends({}, props, { src: imgSrc }))
+					)
+				);
+			}
+		}]);
+
+		return Avatar;
+	})(_react2["default"].Component);
+
+	exports["default"] = Avatar;
+	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);
