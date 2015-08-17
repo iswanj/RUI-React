@@ -2,4 +2,4 @@
 React Components Library 
 
 **Demo URL**<br>
-https://rui-react.herokuapp.com/#/
+http://rui-react.iswanjumat.com/
