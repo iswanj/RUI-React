@@ -25390,7 +25390,11 @@
 						_react2['default'].createElement(
 							'p',
 							null,
-							_react2['default'].createElement(_CompBadge2['default'], { label: 'Input Value:' }),
+							_react2['default'].createElement(
+								'strong',
+								null,
+								'Input Value: '
+							),
 							' ',
 							this.state.inputValue
 						)

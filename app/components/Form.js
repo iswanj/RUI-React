@@ -148,7 +148,7 @@ class Form extends React.Component {
 							onChange={this.handleChange.bind(this)}
 						/>
 					</form>
-					<p><Badge label="Input Value:" /> {this.state.inputValue}</p>
+					<p><strong>Input Value: </strong> {this.state.inputValue}</p>
 				</div>
 				<div className="example-code">
 					<CodeBlock>
