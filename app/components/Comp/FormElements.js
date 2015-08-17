@@ -28,6 +28,8 @@ class Input extends React.Component {
 			return React.findDOMNode(this.refs.radio).checked;
 		}else if(this.props.type === 'checkbox'){
 			return React.findDOMNode(this.refs.checkbox).checked;
+		}else if(this.props.type === 'file'){
+			return React.findDOMNode(this.refs.file).files;
 		}else {
 			return 'invalid input type';
 		}
@@ -101,6 +103,14 @@ class Input extends React.Component {
 	        </div>
 		)
 	}
+	renderFileInput(){
+		return (
+			<div className="input-group">
+				<label htmlFor={this.props.id}>{this.props.label}</label>
+				<input {...this.props} className={`upfile ${this.props.className}`} ref="file" />
+			</div>
+		)
+	}
 	render() {
 		if(this.textType.indexOf(this.props.type) > -1){
 			return this.renderTextInput();
@@ -114,6 +124,8 @@ class Input extends React.Component {
 			return this.renderRadio();
 		}else if(this.props.type === 'checkbox'){
 			return this.renderCheckBox();
+		}else if(this.props.type === 'file'){
+			return this.renderFileInput();
 		}else {
 			return (
 				<div>Invalid type value</div>

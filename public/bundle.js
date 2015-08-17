@@ -25326,10 +25326,8 @@
 			key: 'handleChange',
 			value: function handleChange(e) {
 				e.preventDefault();
-				var text1 = this.refs.check1.getValue();
-				var text2 = this.refs.check2.getValue();
-				var text3 = this.refs.check3.getValue();
-				console.log(text1 + ' - ' + text2 + ' - ' + text3);
+				var file = this.refs.file.getValue();
+				console.log(file);
 			}
 		}, {
 			key: 'render',
@@ -25558,7 +25556,17 @@
 									label: 'Receive in-app notification',
 									id: 'checkBoxThree'
 								})
-							)
+							),
+							_react2['default'].createElement(
+								'h3',
+								null,
+								'File upload'
+							),
+							_react2['default'].createElement(_CompFormElements.Input, { type: 'file',
+								label: 'Upload file',
+								id: 'fileUpload',
+								multiple: 'multiple'
+							})
 						)
 					)
 				);
@@ -26421,6 +26429,8 @@
 					return _react2['default'].findDOMNode(this.refs.radio).checked;
 				} else if (this.props.type === 'checkbox') {
 					return _react2['default'].findDOMNode(this.refs.checkbox).checked;
+				} else if (this.props.type === 'file') {
+					return _react2['default'].findDOMNode(this.refs.file).files;
 				} else {
 					return 'invalid input type';
 				}
@@ -26553,6 +26563,20 @@
 				);
 			}
 		}, {
+			key: 'renderFileInput',
+			value: function renderFileInput() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'input-group' },
+					_react2['default'].createElement(
+						'label',
+						{ htmlFor: this.props.id },
+						this.props.label
+					),
+					_react2['default'].createElement('input', _extends({}, this.props, { className: 'upfile ' + this.props.className, ref: 'file' }))
+				);
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				if (this.textType.indexOf(this.props.type) > -1) {
@@ -26567,6 +26591,8 @@
 					return this.renderRadio();
 				} else if (this.props.type === 'checkbox') {
 					return this.renderCheckBox();
+				} else if (this.props.type === 'file') {
+					return this.renderFileInput();
 				} else {
 					return _react2['default'].createElement(
 						'div',

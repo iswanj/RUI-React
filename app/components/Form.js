@@ -4,10 +4,8 @@ import {Input} from './Comp/FormElements';
 class Form extends React.Component {
 	handleChange(e){
 		e.preventDefault();
-		let text1 = this.refs.check1.getValue();
-		let text2 = this.refs.check2.getValue();
-		let text3 = this.refs.check3.getValue();
-		console.log(text1 +' - '+ text2 +' - '+ text3);
+		let file = this.refs.file.getValue();
+		console.log(file);
 	}
 	render() {
 		return (
@@ -120,6 +118,12 @@ class Form extends React.Component {
 								id="checkBoxThree"
 							/>
 					    </fieldset>
+					    <h3>File upload</h3>
+					    <Input type="file"
+					    	label="Upload file"
+					    	id="fileUpload"
+					    	multiple="multiple"
+					    />
 					</form>
 				</div>
 			</div>
