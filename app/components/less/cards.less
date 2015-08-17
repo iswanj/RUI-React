@@ -3,20 +3,20 @@
     display: block;
     position: relative;
     clear: both;
-    background-color: @brand-default;
+    background-color: lighten(@brand-default, 5%);
     padding: .6em 1em;
     border: 1px solid #b0bec5;
     margin-bottom: .4em;
     border-radius: @border-radius-base;
 
     &.card-success {
-    	background-color: lighten(@brand-success-light, 15%);
-    	border-color: @brand-success-light;
+    	background-color: lighten(@brand-success-light, 40%);
+    	border-color: lighten(@brand-success-light,20%);
 
     }
 
     &.card-danger {
-    	background-color: lighten(@brand-danger, 15%);
-    	border-color: @brand-danger;
+    	background-color: lighten(@brand-danger, 40%);
+    	border-color: lighten(@brand-danger, 20%);
     }
 }

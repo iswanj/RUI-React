@@ -1,7 +1,7 @@
 .rui-nav {
 
 	&.rui-tabs {
-		border-bottom: 1px solid @brand-default;
+		border-bottom: 1px solid @tab-boarder-color;
 		float: left;
 		width: 100%;
 		li {
@@ -26,13 +26,13 @@
 				}
 				&:hover, &:active {
 					background-color: @brand-default;
-					border-color: @brand-default;
+					border-color: @tab-boarder-color;
 				}
 
 				&.active {
 					&:link, &:visited {
 						color: @text;
-						border: 1px solid @brand-default;
+						border: 1px solid @tab-boarder-color;
 						border-bottom: none;
 						background-color: @body-bg;
 					}
@@ -42,7 +42,7 @@
 	}
 
 	&.rui-tabs-vertical {
-		border-right: 1px solid @brand-default;
+		border-right: 1px solid @tab-boarder-color;
 		//temp width (until apply the grid system)
 		width: 20%;
 		float: left;
@@ -71,13 +71,13 @@
 
 				&:hover, &:active {
 					background-color: @brand-default;
-					border-color: @brand-default;
+					border-color: @tab-boarder-color;
 				}
 
 				&.active {
 					&:link, &:visited {
 						color: @text;
-						border: 1px solid @brand-default;
+						border: 1px solid @tab-boarder-color;
 						border-right: none;
 						background-color: @body-bg;
 					}
