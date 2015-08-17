@@ -23618,11 +23618,11 @@
 
 	var _componentsForm2 = _interopRequireDefault(_componentsForm);
 
-	var _componentsDialogs = __webpack_require__(237);
+	var _componentsDialogs = __webpack_require__(238);
 
 	var _componentsDialogs2 = _interopRequireDefault(_componentsDialogs);
 
-	var _componentsMessages = __webpack_require__(239);
+	var _componentsMessages = __webpack_require__(240);
 
 	var _componentsMessages2 = _interopRequireDefault(_componentsMessages);
 
@@ -25311,7 +25311,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CompFormElements = __webpack_require__(242);
+	var _CompFormElements = __webpack_require__(237);
+
+	var _CompFormElements2 = _interopRequireDefault(_CompFormElements);
+
+	var _CompBadge = __webpack_require__(222);
+
+	var _CompBadge2 = _interopRequireDefault(_CompBadge);
+
+	var _CodeBlock = __webpack_require__(231);
+
+	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
 
 	var Form = (function (_React$Component) {
 		_inherits(Form, _React$Component);
@@ -25319,19 +25329,30 @@
 		function Form() {
 			_classCallCheck(this, Form);
 
-			_get(Object.getPrototypeOf(Form.prototype), 'constructor', this).apply(this, arguments);
+			_get(Object.getPrototypeOf(Form.prototype), 'constructor', this).call(this);
+			this.state = {
+				inputValue: ''
+			};
 		}
 
 		_createClass(Form, [{
 			key: 'handleChange',
-			value: function handleChange(e) {
-				e.preventDefault();
-				var file = this.refs.file.getValue();
-				console.log(file);
+			value: function handleChange() {
+				this.setState({
+					inputValue: this.refs.input.getValue()
+				});
 			}
 		}, {
 			key: 'render',
 			value: function render() {
+				var moduleUsage = 'import React from \'react\';\n' + '//Import React Form \n' + 'import Input from \'./Comp/FormElements\';\n',
+				    firstExampleJs = 'constructor(){\n' + '	super();\n' + '	this.state = {\n' + '		inputValue: \'\'\n' + '	}\n' + '}\n' + 'handleChange(){\n' + '	this.setState({\n' + '		inputValue: this.refs.input.getValue()\n' + '	});\n' + '}\n',
+				    firstExampleHtml = '<form className="rui-form">\n' + '	<Input type="text"\n' + '		className="additional_class"\n' + '		label="Default input"\n' + '		id="inputdef"\n' + '		placeholder="Type someting"\n' + '		ref="input"\n' + '		description="Your default width input."\n' + '		onChange={this.handleChange.bind(this)}\n' + '	/>\n' + '</form>',
+				    inputElements = '<Input type="text"\n' + '	className="additional_class"\n' + '	label="Default input"\n' + '	id="inputdef"\n' + '	placeholder="input placeholder"\n' + '	required={true}\n' + '	description="Your default width input." \n' + '/>\n' + '<Input type="text"\n' + '	className="long-input"\n' + '	label="Long input"\n' + '	id="inputLong"\n' + '	description="Your long width input."\n' + '/>\n' + '<Input type="text"\n' + '	className="medium-input"\n' + '	label="Medium input"\n' + '	id="inputMedium"\n' + '	description="Your medium width input."\n' + '/>\n' + '<Input type="text"\n' + '	className="short-input"\n' + '	label="Short input"\n' + '	id="inputShort"\n' + '	description="Your short width input."\n' + '/>\n' + '<Input type="text"\n' + '	label="Disabled input"\n' + '	id="inputDisabled"\n' + '	placeholder="Disabled input"\n' + '	disabled="disabled"\n' + '/>',
+				    textAreaCode = '<Input type="textarea"\n' + '	label="Comment"\n' + '	id="inputTextarea"\n' + '	placeholder="Your comment here..."\n' + '/>',
+				    selectCode = '<Input type="select"\n' + '	label="Dropdown"\n' + '	id="inputDropdown"\n' + '>\n' + '	<option value="">Select</option>\n' + '	<option value="opt1">Option 1</option>\n' + '	<option value="opt2">Option 2</option>\n' + '	<optgroup label="Group 1">\n' + '		<option value="opts1">Option one</option>\n' + '		<option value="opts2">Option two</option>\n' + '	</optgroup>\n' + '	<option value="opt3">Option 3</option>\n' + '	<option value="opt4">Option 4</option>\n' + '</Input>\n' + '\n' + '<Input type="multi-select"\n' + '	label="Multi Select"\n' + '	id="inputDropdown"\n' + '	size="4"\n' + '	multiple="multiple"\n' + '>\n' + '	<option value="opt1">option one</option>\n' + '	<option value="opt2">option two</option>\n' + '	<option value="opt3">option three</option>\n' + '	<option value="opt4">option four</option>\n' + '	<option value="opt5">option five</option>\n' + '	<option value="opt6">option six</option>\n' + '</Input>',
+				    radioNcheckbox = '<Input type="radio"\n' + '	label="Save as a blog post"\n' + '	defaultChecked="checked"\n' + '	name="radioButtons"\n' + '	id="radioButtons"\n' + '/>\n' + '\n' + '<Input type="checkbox"\n' + '	label="Receive email"\n' + '	defaultChecked="checked"\n' + '	id="checkBoxOne"\n' + '/>',
+				    fileuploader = '<Input type="file"\n' + '	label="Upload file"\n' + '	id="fileUpload"\n' + '	multiple="multiple"\n' + '/>';
 				return _react2['default'].createElement(
 					'div',
 					null,
@@ -25354,14 +25375,52 @@
 							'Example'
 						),
 						_react2['default'].createElement(
+							'form',
+							{ className: 'rui-form' },
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'text',
+								className: 'additional_class',
+								label: 'Default input',
+								id: 'inputdef',
+								placeholder: 'Type someting',
+								ref: 'input',
+								description: 'Your default width input.',
+								onChange: this.handleChange.bind(this)
+							})
+						),
+						_react2['default'].createElement(
+							'p',
+							null,
+							_react2['default'].createElement(_CompBadge2['default'], { label: 'Input Value:' }),
+							' ',
+							this.state.inputValue
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							firstExampleJs
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							firstExampleHtml
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
 							'h4',
 							null,
 							'Text Input'
 						),
 						_react2['default'].createElement(
 							'form',
-							{ className: 'rui-form', onSubmit: this.handleChange.bind(this) },
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'text',
+							{ className: 'rui-form' },
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'text',
 								className: 'additional_class',
 								label: 'Default input',
 								id: 'inputdef',
@@ -25369,47 +25428,86 @@
 								required: true,
 								description: 'Your default width input.'
 							}),
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'text',
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'text',
 								className: 'long-input',
 								label: 'Long input',
 								id: 'inputLong',
 								description: 'Your long width input.'
 							}),
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'text',
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'text',
 								className: 'medium-input',
 								label: 'Medium input',
 								id: 'inputMedium',
 								description: 'Your medium width input.'
 							}),
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'text',
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'text',
 								className: 'short-input',
 								label: 'Short input',
 								id: 'inputShort',
 								description: 'Your short width input.'
 							}),
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'text',
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'text',
 								label: 'Disabled input',
 								id: 'inputDisabled',
 								placeholder: 'Disabled input',
 								disabled: 'disabled'
-							}),
+							})
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							moduleUsage
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							inputElements
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'form',
+							{ className: 'rui-form' },
 							_react2['default'].createElement(
-								'h3',
+								'h4',
 								null,
 								'Textarea'
 							),
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'textarea',
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'textarea',
 								label: 'Comment',
 								id: 'inputTextarea',
 								placeholder: 'Your comment here...'
-							}),
+							})
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							textAreaCode
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'form',
+							{ className: 'rui-form' },
 							_react2['default'].createElement(
-								'h3',
+								'h4',
 								null,
 								'Dropdown and multi select'
 							),
 							_react2['default'].createElement(
-								_CompFormElements.Input,
+								_CompFormElements2['default'],
 								{ type: 'select',
 									label: 'Dropdown',
 									id: 'inputDropdown'
@@ -25455,7 +25553,7 @@
 								)
 							),
 							_react2['default'].createElement(
-								_CompFormElements.Input,
+								_CompFormElements2['default'],
 								{ type: 'multi-select',
 									label: 'Multi Select',
 									id: 'inputDropdown',
@@ -25492,9 +25590,26 @@
 									{ value: 'opt6' },
 									'option six'
 								)
-							),
+							)
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							selectCode
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'form',
+							{ className: 'rui-form' },
 							_react2['default'].createElement(
-								'h3',
+								'h4',
 								null,
 								'Radio buttons'
 							),
@@ -25510,25 +25625,25 @@
 										'Radio buttons'
 									)
 								),
-								_react2['default'].createElement(_CompFormElements.Input, { type: 'radio',
+								_react2['default'].createElement(_CompFormElements2['default'], { type: 'radio',
 									label: 'Save as a blog post',
 									defaultChecked: 'checked',
 									name: 'radioButtons',
 									id: 'radioButtons'
 								}),
-								_react2['default'].createElement(_CompFormElements.Input, { type: 'radio',
+								_react2['default'].createElement(_CompFormElements2['default'], { type: 'radio',
 									label: 'Save as a page',
 									name: 'radioButtons',
 									id: 'radioButtonTwo'
 								}),
-								_react2['default'].createElement(_CompFormElements.Input, { type: 'radio',
+								_react2['default'].createElement(_CompFormElements2['default'], { type: 'radio',
 									label: 'Save to your drafts',
 									name: 'radioButtons',
 									id: 'radioButtonThree'
 								})
 							),
 							_react2['default'].createElement(
-								'h3',
+								'h4',
 								null,
 								'Checkboxes'
 							),
@@ -25544,29 +25659,55 @@
 										'Checkboxes'
 									)
 								),
-								_react2['default'].createElement(_CompFormElements.Input, { type: 'checkbox',
+								_react2['default'].createElement(_CompFormElements2['default'], { type: 'checkbox',
 									label: 'Receive email',
 									id: 'checkBoxOne'
 								}),
-								_react2['default'].createElement(_CompFormElements.Input, { type: 'checkbox',
+								_react2['default'].createElement(_CompFormElements2['default'], { type: 'checkbox',
 									label: 'Receive push notification',
 									id: 'checkBoxTwo'
 								}),
-								_react2['default'].createElement(_CompFormElements.Input, { type: 'checkbox',
+								_react2['default'].createElement(_CompFormElements2['default'], { type: 'checkbox',
 									label: 'Receive in-app notification',
 									id: 'checkBoxThree'
 								})
-							),
+							)
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							radioNcheckbox
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'form',
+							{ className: 'rui-form' },
 							_react2['default'].createElement(
-								'h3',
+								'h4',
 								null,
 								'File upload'
 							),
-							_react2['default'].createElement(_CompFormElements.Input, { type: 'file',
+							_react2['default'].createElement(_CompFormElements2['default'], { type: 'file',
 								label: 'Upload file',
 								id: 'fileUpload',
 								multiple: 'multiple'
 							})
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							fileuploader
 						)
 					)
 				);
@@ -25581,794 +25722,6 @@
 
 /***/ },
 /* 237 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(25);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _CompButton = __webpack_require__(233);
-
-	var _CompDialog = __webpack_require__(238);
-
-	var _CompDialog2 = _interopRequireDefault(_CompDialog);
-
-	var _CodeBlock = __webpack_require__(231);
-
-	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
-
-	var Dialogs = (function (_React$Component) {
-		_inherits(Dialogs, _React$Component);
-
-		function Dialogs() {
-			_classCallCheck(this, Dialogs);
-
-			_get(Object.getPrototypeOf(Dialogs.prototype), 'constructor', this).apply(this, arguments);
-		}
-
-		_createClass(Dialogs, [{
-			key: 'openDialog',
-			value: function openDialog() {
-				_CompDialog2['default'].openDialog("#my-dialog2");
-			}
-		}, {
-			key: 'openErrorDialog',
-			value: function openErrorDialog() {
-				_CompDialog2['default'].openDialog("#my-dialog3");
-			}
-		}, {
-			key: 'closeD',
-			value: function closeD() {
-				_CompDialog2['default'].closeDialogOutSide();
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var moduleUsage = 'import React from \'react\';\n' + '//Import Dialog Component\n' + 'import {Button} from \'./Comp/Button\';\n' + 'import Dialog from \'./Comp/Dialog\';\n',
-				    dialogDefault = '<Dialog id="my-dialog2" Dtitle="Dialog Title">\n' + '	<div className="dialog-body">\n' + '		Dialog body\n' + '	</div>\n' + '	<div className="dialog-footer">\n' + '		<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>\n' + '	</div>\n' + '</Dialog>',
-				    dialogDanger = '<Dialog className="dialog-warning" id="my-dialog3" Dtitle="Danger Dialog Title">\n' + '	<div className="dialog-body">\n' + '		Danger dialog body\n' + '	</div>\n' + '	<div className="dialog-footer">\n' + '		<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>\n' + '	</div>\n' + '</Dialog>',
-				    dialogOpen = '//Open Dialog\n' + 'openDialog() {\n' + '    Dialog.openDialog("#my-dialog2");\n' + '}',
-				    dialogClose = '//Close Dialog \n' + 'closeDialog() {\n' + '	Dialog.closeDialogOutSide();\n' + '}';
-
-				return _react2['default'].createElement(
-					'div',
-					null,
-					_react2['default'].createElement(
-						'h1',
-						null,
-						'Dialog'
-					),
-					_react2['default'].createElement(
-						'p',
-						{ className: 'help' },
-						'( Core Components )'
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'example' },
-						_react2['default'].createElement(
-							'p',
-							{ className: 'head' },
-							'Example'
-						),
-						_react2['default'].createElement(_CompButton.Button, { className: 'rui-button-primary', btnText: 'Open Dialog', clickBtn: this.openDialog }),
-						_react2['default'].createElement(_CompButton.Button, { className: 'rui-button-danger button-o', btnText: 'Open Error Dialog', clickBtn: this.openErrorDialog })
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'example-code' },
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							moduleUsage
-						),
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							dialogDefault
-						),
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							dialogDanger
-						),
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							dialogOpen
-						),
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							dialogClose
-						)
-					),
-					_react2['default'].createElement(
-						_CompDialog2['default'],
-						{ id: 'my-dialog2', Dtitle: 'Dialog Title' },
-						_react2['default'].createElement(
-							'div',
-							{ className: 'dialog-body' },
-							'Dialog body'
-						),
-						_react2['default'].createElement(
-							'div',
-							{ className: 'dialog-footer' },
-							_react2['default'].createElement(
-								'button',
-								{ className: 'rui-button right', onClick: this.closeD },
-								'Close'
-							)
-						)
-					),
-					_react2['default'].createElement(
-						_CompDialog2['default'],
-						{ className: 'dialog-warning', id: 'my-dialog3', Dtitle: 'Danger Dialog Title' },
-						_react2['default'].createElement(
-							'div',
-							{ className: 'dialog-body' },
-							'Danger dialog body'
-						),
-						_react2['default'].createElement(
-							'div',
-							{ className: 'dialog-footer' },
-							_react2['default'].createElement(
-								'button',
-								{ className: 'rui-button right', onClick: this.closeD },
-								'Close'
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return Dialogs;
-	})(_react2['default'].Component);
-
-	exports['default'] = Dialogs;
-	module.exports = exports['default'];
-
-/***/ },
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(25);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var Dialog = (function (_React$Component) {
-		_inherits(Dialog, _React$Component);
-
-		function Dialog() {
-			_classCallCheck(this, Dialog);
-
-			_get(Object.getPrototypeOf(Dialog.prototype), 'constructor', this).apply(this, arguments);
-		}
-
-		_createClass(Dialog, [{
-			key: 'closeDialog',
-			value: function closeDialog(e) {
-				e.preventDefault();
-				var elDialogs = document.querySelectorAll('.rui-dialog');
-				var _iteratorNormalCompletion = true;
-				var _didIteratorError = false;
-				var _iteratorError = undefined;
-
-				try {
-					for (var _iterator = Array.from(elDialogs)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-						var el = _step.value;
-
-						el.style.display = "none";
-					}
-
-					//re-active body scrollbar
-				} catch (err) {
-					_didIteratorError = true;
-					_iteratorError = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion && _iterator['return']) {
-							_iterator['return']();
-						}
-					} finally {
-						if (_didIteratorError) {
-							throw _iteratorError;
-						}
-					}
-				}
-
-				var body = document.querySelector('body');
-				body.classList.remove('dialog-open');
-			}
-		}, {
-			key: 'stopDialogClickHandler',
-			value: function stopDialogClickHandler(e) {
-				e.stopPropagation();
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'rui-dialog rui-overlay', onClick: this.closeDialog, 'data-role': 'dialog', id: this.props.id },
-					_react2['default'].createElement(
-						'div',
-						{ className: 'dialog-content dialog-small', onClick: this.stopDialogClickHandler },
-						_react2['default'].createElement(
-							'div',
-							{ className: 'dialog-header ' + this.props.className },
-							_react2['default'].createElement(
-								'h3',
-								null,
-								this.props.Dtitle
-							),
-							_react2['default'].createElement(
-								'a',
-								{ href: '#', className: 'closeM', onClick: this.closeDialog },
-								_react2['default'].createElement(
-									'i',
-									{ className: 'material-icons' },
-									'close'
-								)
-							)
-						),
-						this.props.children
-					)
-				);
-			}
-		}], [{
-			key: 'openDialog',
-
-			//Open dialog (From out side)
-			value: function openDialog(selector) {
-				var El = document.querySelector(selector);
-				El.style.display = "block";
-
-				//disable body scrollbar
-				var body = document.querySelector('body');
-				body.classList.add('dialog-open');
-			}
-
-			//Close dialog out side from this component
-		}, {
-			key: 'closeDialogOutSide',
-			value: function closeDialogOutSide() {
-				var elDialogs = document.querySelectorAll('.rui-dialog');
-				var _iteratorNormalCompletion2 = true;
-				var _didIteratorError2 = false;
-				var _iteratorError2 = undefined;
-
-				try {
-					for (var _iterator2 = Array.from(elDialogs)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-						var el = _step2.value;
-
-						el.style.display = "none";
-					}
-					//re-active body scrollbar
-				} catch (err) {
-					_didIteratorError2 = true;
-					_iteratorError2 = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion2 && _iterator2['return']) {
-							_iterator2['return']();
-						}
-					} finally {
-						if (_didIteratorError2) {
-							throw _iteratorError2;
-						}
-					}
-				}
-
-				var body = document.querySelector('body');
-				body.classList.remove('dialog-open');
-			}
-		}]);
-
-		return Dialog;
-	})(_react2['default'].Component);
-
-	exports['default'] = Dialog;
-	module.exports = exports['default'];
-
-/***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(25);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _CompMessage = __webpack_require__(240);
-
-	var _CompMessage2 = _interopRequireDefault(_CompMessage);
-
-	var _CompToaster = __webpack_require__(241);
-
-	var _CodeBlock = __webpack_require__(231);
-
-	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
-
-	var Messages = (function (_React$Component) {
-		_inherits(Messages, _React$Component);
-
-		function Messages() {
-			_classCallCheck(this, Messages);
-
-			_get(Object.getPrototypeOf(Messages.prototype), 'constructor', this).apply(this, arguments);
-		}
-
-		_createClass(Messages, [{
-			key: 'openToaster',
-			value: function openToaster() {
-				_CompToaster.Toaster.show({
-					title: 'Completed!',
-					body: 'You have been successfuly completed Induction Training final quiz',
-					type: 'success',
-					autoClose: true
-				});
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var moduleUsage = 'import React from \'react\';\n' + '//Import Dialog Component\n' + 'import Message from \'./Comp/Message\';\n',
-				    msgTypes = '//Default Message\n' + '<Message type="default">\n' + '	<h4 className="title">Training Status</h4>\n' + '	<p className="body">Final quiz for <strong>Induction Training</strong> will available after 21/08/2015.</p>\n' + '</Message>\n' + '\n' + '//Danger/Alert Message\n' + '<Message type="danger">\n' + '	<h4 className="title">Training Expired!</h4>\n' + '	<p className="body">The training has been expired before you complete it.</p>\n' + '	<p className="info">\n' + '		<strong>Training Name:</strong> Induction Training\n' + '	</p>\n' + '</Message>\n' + '\n' + '//Warning Message\n' + '<Message type="warning">\n' + '	<h4 className="title">Warning!</h4>\n' + '	<p className="body">You have only 2 more days to complete final quiz.</p>\n' + '	<p className="info">\n' + '		<strong>Training Name:</strong> Induction Training\n' + '	</p>\n' + '</Message>\n' + '\n' + '//Success Message\n' + '<Message type="success">\n' + '	<h4 className="title">Completed!</h4>\n' + '	<p className="body">You have been successfuly completed <strong>Induction Training</strong> final quiz</p>\n' + '</Message>',
-				    toasterButton = '//Buttion\n' + '<button className="rui-button rui-button-primary" onClick={this.openToaster}>Show Toaster</button>\n',
-				    toasterMsg = '//Opening Toaster\n' + 'openToaster(){\n' + '	Toaster.show({\n' + '		title: \'Completed!\',\n' + '		body: \'You have been successfuly completed Induction Training final quiz\',\n' + '		type: \'success\',\n' + '		autoClose: true\n' + '	});\n' + '}';
-				return _react2['default'].createElement(
-					'div',
-					null,
-					_react2['default'].createElement(
-						'h1',
-						null,
-						'Messages'
-					),
-					_react2['default'].createElement(
-						'p',
-						null,
-						'Messages are the main method for providing system feedback in the product user interface. There are varius kind of message notifications: confirmations, notices, warnings, info and errors '
-					),
-					_react2['default'].createElement(
-						'p',
-						{ className: 'help' },
-						'(Core Components)'
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'example' },
-						_react2['default'].createElement(
-							'p',
-							{ className: 'head' },
-							'Example'
-						),
-						_react2['default'].createElement(
-							'p',
-							{ className: 'help' },
-							'With HTML'
-						),
-						_react2['default'].createElement(
-							_CompMessage2['default'],
-							{ type: 'default' },
-							_react2['default'].createElement(
-								'h4',
-								{ className: 'title' },
-								'Training Status'
-							),
-							_react2['default'].createElement(
-								'p',
-								{ className: 'body' },
-								'Final quiz for ',
-								_react2['default'].createElement(
-									'strong',
-									null,
-									'Induction Training'
-								),
-								' will available after 21/08/2015.'
-							)
-						),
-						_react2['default'].createElement('br', null),
-						_react2['default'].createElement(
-							_CompMessage2['default'],
-							{ type: 'danger' },
-							_react2['default'].createElement(
-								'h4',
-								{ className: 'title' },
-								'Training Expired!'
-							),
-							_react2['default'].createElement(
-								'p',
-								{ className: 'body' },
-								'The training has been expired before you complete it.'
-							),
-							_react2['default'].createElement(
-								'p',
-								{ className: 'info' },
-								_react2['default'].createElement(
-									'strong',
-									null,
-									'Training Name:'
-								),
-								' Induction Training'
-							)
-						),
-						_react2['default'].createElement('br', null),
-						_react2['default'].createElement(
-							_CompMessage2['default'],
-							{ type: 'warning' },
-							_react2['default'].createElement(
-								'h4',
-								{ className: 'title' },
-								'Warning!'
-							),
-							_react2['default'].createElement(
-								'p',
-								{ className: 'body' },
-								'You have only 2 more days to complete final quiz.'
-							),
-							_react2['default'].createElement(
-								'p',
-								{ className: 'info' },
-								_react2['default'].createElement(
-									'strong',
-									null,
-									'Training Name:'
-								),
-								' Induction Training'
-							)
-						),
-						_react2['default'].createElement('br', null),
-						_react2['default'].createElement(
-							_CompMessage2['default'],
-							{ type: 'success' },
-							_react2['default'].createElement(
-								'h4',
-								{ className: 'title' },
-								'Completed!'
-							),
-							_react2['default'].createElement(
-								'p',
-								{ className: 'body' },
-								'You have been successfuly completed ',
-								_react2['default'].createElement(
-									'strong',
-									null,
-									'Induction Training'
-								),
-								' final quiz'
-							)
-						)
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'example-code' },
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							moduleUsage
-						),
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							msgTypes
-						)
-					),
-					_react2['default'].createElement(
-						'h1',
-						null,
-						'Toaster Messages'
-					),
-					_react2['default'].createElement(
-						'p',
-						null,
-						'Toaster Messages the main method fro providing immediate feedback in response to a user action. The messages are shown at the top of the page and like html messages stay for few seconds.'
-					),
-					_react2['default'].createElement(
-						'p',
-						{ className: 'help' },
-						'(Core Components)'
-					),
-					_react2['default'].createElement(
-						'p',
-						{ className: 'help' },
-						_react2['default'].createElement(
-							'strong',
-							null,
-							'Variations '
-						),
-						'(type): info(default), success, danger, warning'
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'example' },
-						_react2['default'].createElement(
-							'p',
-							{ className: 'head' },
-							'Example'
-						),
-						_react2['default'].createElement(
-							'button',
-							{ className: 'rui-button rui-button-primary', onClick: this.openToaster },
-							'Show Toaster'
-						)
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'example-code' },
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							toasterButton
-						),
-						_react2['default'].createElement(
-							_CodeBlock2['default'],
-							null,
-							toasterMsg
-						)
-					)
-				);
-			}
-		}]);
-
-		return Messages;
-	})(_react2['default'].Component);
-
-	exports['default'] = Messages;
-	module.exports = exports['default'];
-
-/***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(25);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var Message = (function (_React$Component) {
-		_inherits(Message, _React$Component);
-
-		function Message() {
-			_classCallCheck(this, Message);
-
-			_get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
-		}
-
-		_createClass(Message, [{
-			key: 'renderIcon',
-			value: function renderIcon(type) {
-				switch (type) {
-					case 'danger':
-						return _react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'highlight_off'
-						);
-					case 'warning':
-						return _react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'warning'
-						);
-					case 'success':
-						return _react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'done'
-						);
-					default:
-						return _react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'info_outline'
-						);
-				}
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'rui-message message-' + this.props.type },
-					_react2['default'].createElement(
-						'div',
-						{ className: 'msg-icon left' },
-						this.renderIcon(this.props.type)
-					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'msg-content left' },
-						this.props.children
-					)
-				);
-			}
-		}]);
-
-		return Message;
-	})(_react2['default'].Component);
-
-	exports['default'] = Message;
-	module.exports = exports['default'];
-
-/***/ },
-/* 241 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	var Toast = (function () {
-		function Toast() {
-			_classCallCheck(this, Toast);
-		}
-
-		//export default Toaster;
-
-		_createClass(Toast, [{
-			key: 'setAttributes',
-			value: function setAttributes(el, attrs) {
-				for (var key in attrs) {
-					el.setAttribute(key, attrs[key]);
-				}
-			}
-		}, {
-			key: 'clearToasters',
-			value: function clearToasters() {
-				var elMsg = document.querySelector('.rui-toaster');
-				if (elMsg) {
-					document.body.removeChild(elMsg);
-				}
-			}
-		}, {
-			key: 'show',
-			value: function show(options) {
-				var icon = undefined,
-				    toast = undefined,
-				    closeLink = undefined,
-				    ruiMsg = undefined;
-				var title = options.title != '' ? options.title : "Message titlle";
-				var body = options.body != '' ? options.body : "Message titlle";
-				var type = options.type != '' ? options.type : "";
-				var autoClose = options.autoClose != '' ? options.autoClose : "Message titlle";
-
-				//clear all toasters
-				this.clearToasters();
-
-				//creating a toaster
-				toast = document.createElement('div');
-				toast.setAttribute('class', 'rui-toaster');
-
-				//creating a close link
-				closeLink = document.createElement('a');
-				this.setAttributes(closeLink, {
-					'href': '#',
-					'class': 'close'
-				});
-				closeLink.insertAdjacentHTML('beforeend', '<i class="material-icons">&#xE5CD;</i>');
-
-				//add close event
-				closeLink.addEventListener('click', function (e) {
-					e.preventDefault();
-					document.body.removeChild(toast);
-				});
-
-				//toaster msg
-				ruiMsg = document.createElement('div');
-				this.setAttributes(ruiMsg, {
-					'class': 'rui-message message-' + type
-				});
-
-				//message icon generate
-				switch (type) {
-					case 'success':
-						icon = '<i class="material-icons">&#xE876;</i>';
-						break;
-					case 'danger':
-						icon = '<i class="material-icons">&#xE888;</i>';
-						break;
-					case 'warning':
-						icon = '<i class="material-icons">&#xE002;</i>';
-					default:
-						icon = '<i class="material-icons">&#xE88F;</i>';
-				}
-
-				//msg content
-				var msgCont = '<div class="msg-icon left">\n\t\t\t\t\t\t\t' + icon + '\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="msg-content left">\n\t\t\t\t\t\t\t<h4 class="title">' + title + '</h4>\n\t\t\t\t\t\t\t<p class="body">' + body + '</p>\n\t\t\t\t\t\t</div>';
-
-				ruiMsg.appendChild(closeLink);
-				ruiMsg.insertAdjacentHTML('beforeend', msgCont);
-				toast.appendChild(ruiMsg);
-				document.body.appendChild(toast);
-
-				//timeout auto close after 4Sec
-				if (autoClose === true) {
-					setTimeout(function () {
-						if (toast) {
-							document.body.removeChild(toast);
-						}
-					}, 4000);
-				}
-			}
-		}]);
-
-		return Toast;
-	})();
-
-	var Toaster = new Toast();
-	exports.Toaster = Toaster;
-
-/***/ },
-/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26611,7 +25964,796 @@
 		id: _react2['default'].PropTypes.string.isRequired
 	};
 
-	exports.Input = Input;
+	exports['default'] = Input;
+	module.exports = exports['default'];
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _CompButton = __webpack_require__(233);
+
+	var _CompDialog = __webpack_require__(239);
+
+	var _CompDialog2 = _interopRequireDefault(_CompDialog);
+
+	var _CodeBlock = __webpack_require__(231);
+
+	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
+
+	var Dialogs = (function (_React$Component) {
+		_inherits(Dialogs, _React$Component);
+
+		function Dialogs() {
+			_classCallCheck(this, Dialogs);
+
+			_get(Object.getPrototypeOf(Dialogs.prototype), 'constructor', this).apply(this, arguments);
+		}
+
+		_createClass(Dialogs, [{
+			key: 'openDialog',
+			value: function openDialog() {
+				_CompDialog2['default'].openDialog("#my-dialog2");
+			}
+		}, {
+			key: 'openErrorDialog',
+			value: function openErrorDialog() {
+				_CompDialog2['default'].openDialog("#my-dialog3");
+			}
+		}, {
+			key: 'closeD',
+			value: function closeD() {
+				_CompDialog2['default'].closeDialogOutSide();
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var moduleUsage = 'import React from \'react\';\n' + '//Import Dialog Component\n' + 'import {Button} from \'./Comp/Button\';\n' + 'import Dialog from \'./Comp/Dialog\';\n',
+				    dialogDefault = '<Dialog id="my-dialog2" Dtitle="Dialog Title">\n' + '	<div className="dialog-body">\n' + '		Dialog body\n' + '	</div>\n' + '	<div className="dialog-footer">\n' + '		<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>\n' + '	</div>\n' + '</Dialog>',
+				    dialogDanger = '<Dialog className="dialog-warning" id="my-dialog3" Dtitle="Danger Dialog Title">\n' + '	<div className="dialog-body">\n' + '		Danger dialog body\n' + '	</div>\n' + '	<div className="dialog-footer">\n' + '		<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>\n' + '	</div>\n' + '</Dialog>',
+				    dialogOpen = '//Open Dialog\n' + 'openDialog() {\n' + '    Dialog.openDialog("#my-dialog2");\n' + '}',
+				    dialogClose = '//Close Dialog \n' + 'closeDialog() {\n' + '	Dialog.closeDialogOutSide();\n' + '}';
+
+				return _react2['default'].createElement(
+					'div',
+					null,
+					_react2['default'].createElement(
+						'h1',
+						null,
+						'Dialog'
+					),
+					_react2['default'].createElement(
+						'p',
+						{ className: 'help' },
+						'( Core Components )'
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'p',
+							{ className: 'head' },
+							'Example'
+						),
+						_react2['default'].createElement(_CompButton.Button, { className: 'rui-button-primary', btnText: 'Open Dialog', clickBtn: this.openDialog }),
+						_react2['default'].createElement(_CompButton.Button, { className: 'rui-button-danger button-o', btnText: 'Open Error Dialog', clickBtn: this.openErrorDialog })
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							moduleUsage
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							dialogDefault
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							dialogDanger
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							dialogOpen
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							dialogClose
+						)
+					),
+					_react2['default'].createElement(
+						_CompDialog2['default'],
+						{ id: 'my-dialog2', Dtitle: 'Dialog Title' },
+						_react2['default'].createElement(
+							'div',
+							{ className: 'dialog-body' },
+							'Dialog body'
+						),
+						_react2['default'].createElement(
+							'div',
+							{ className: 'dialog-footer' },
+							_react2['default'].createElement(
+								'button',
+								{ className: 'rui-button right', onClick: this.closeD },
+								'Close'
+							)
+						)
+					),
+					_react2['default'].createElement(
+						_CompDialog2['default'],
+						{ className: 'dialog-warning', id: 'my-dialog3', Dtitle: 'Danger Dialog Title' },
+						_react2['default'].createElement(
+							'div',
+							{ className: 'dialog-body' },
+							'Danger dialog body'
+						),
+						_react2['default'].createElement(
+							'div',
+							{ className: 'dialog-footer' },
+							_react2['default'].createElement(
+								'button',
+								{ className: 'rui-button right', onClick: this.closeD },
+								'Close'
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Dialogs;
+	})(_react2['default'].Component);
+
+	exports['default'] = Dialogs;
+	module.exports = exports['default'];
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Dialog = (function (_React$Component) {
+		_inherits(Dialog, _React$Component);
+
+		function Dialog() {
+			_classCallCheck(this, Dialog);
+
+			_get(Object.getPrototypeOf(Dialog.prototype), 'constructor', this).apply(this, arguments);
+		}
+
+		_createClass(Dialog, [{
+			key: 'closeDialog',
+			value: function closeDialog(e) {
+				e.preventDefault();
+				var elDialogs = document.querySelectorAll('.rui-dialog');
+				var _iteratorNormalCompletion = true;
+				var _didIteratorError = false;
+				var _iteratorError = undefined;
+
+				try {
+					for (var _iterator = Array.from(elDialogs)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						var el = _step.value;
+
+						el.style.display = "none";
+					}
+
+					//re-active body scrollbar
+				} catch (err) {
+					_didIteratorError = true;
+					_iteratorError = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion && _iterator['return']) {
+							_iterator['return']();
+						}
+					} finally {
+						if (_didIteratorError) {
+							throw _iteratorError;
+						}
+					}
+				}
+
+				var body = document.querySelector('body');
+				body.classList.remove('dialog-open');
+			}
+		}, {
+			key: 'stopDialogClickHandler',
+			value: function stopDialogClickHandler(e) {
+				e.stopPropagation();
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'rui-dialog rui-overlay', onClick: this.closeDialog, 'data-role': 'dialog', id: this.props.id },
+					_react2['default'].createElement(
+						'div',
+						{ className: 'dialog-content dialog-small', onClick: this.stopDialogClickHandler },
+						_react2['default'].createElement(
+							'div',
+							{ className: 'dialog-header ' + this.props.className },
+							_react2['default'].createElement(
+								'h3',
+								null,
+								this.props.Dtitle
+							),
+							_react2['default'].createElement(
+								'a',
+								{ href: '#', className: 'closeM', onClick: this.closeDialog },
+								_react2['default'].createElement(
+									'i',
+									{ className: 'material-icons' },
+									'close'
+								)
+							)
+						),
+						this.props.children
+					)
+				);
+			}
+		}], [{
+			key: 'openDialog',
+
+			//Open dialog (From out side)
+			value: function openDialog(selector) {
+				var El = document.querySelector(selector);
+				El.style.display = "block";
+
+				//disable body scrollbar
+				var body = document.querySelector('body');
+				body.classList.add('dialog-open');
+			}
+
+			//Close dialog out side from this component
+		}, {
+			key: 'closeDialogOutSide',
+			value: function closeDialogOutSide() {
+				var elDialogs = document.querySelectorAll('.rui-dialog');
+				var _iteratorNormalCompletion2 = true;
+				var _didIteratorError2 = false;
+				var _iteratorError2 = undefined;
+
+				try {
+					for (var _iterator2 = Array.from(elDialogs)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+						var el = _step2.value;
+
+						el.style.display = "none";
+					}
+					//re-active body scrollbar
+				} catch (err) {
+					_didIteratorError2 = true;
+					_iteratorError2 = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion2 && _iterator2['return']) {
+							_iterator2['return']();
+						}
+					} finally {
+						if (_didIteratorError2) {
+							throw _iteratorError2;
+						}
+					}
+				}
+
+				var body = document.querySelector('body');
+				body.classList.remove('dialog-open');
+			}
+		}]);
+
+		return Dialog;
+	})(_react2['default'].Component);
+
+	exports['default'] = Dialog;
+	module.exports = exports['default'];
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _CompMessage = __webpack_require__(241);
+
+	var _CompMessage2 = _interopRequireDefault(_CompMessage);
+
+	var _CompToaster = __webpack_require__(242);
+
+	var _CodeBlock = __webpack_require__(231);
+
+	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
+
+	var Messages = (function (_React$Component) {
+		_inherits(Messages, _React$Component);
+
+		function Messages() {
+			_classCallCheck(this, Messages);
+
+			_get(Object.getPrototypeOf(Messages.prototype), 'constructor', this).apply(this, arguments);
+		}
+
+		_createClass(Messages, [{
+			key: 'openToaster',
+			value: function openToaster() {
+				_CompToaster.Toaster.show({
+					title: 'Completed!',
+					body: 'You have been successfuly completed Induction Training final quiz',
+					type: 'success',
+					autoClose: true
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var moduleUsage = 'import React from \'react\';\n' + '//Import Dialog Component\n' + 'import Message from \'./Comp/Message\';\n',
+				    msgTypes = '//Default Message\n' + '<Message type="default">\n' + '	<h4 className="title">Training Status</h4>\n' + '	<p className="body">Final quiz for <strong>Induction Training</strong> will available after 21/08/2015.</p>\n' + '</Message>\n' + '\n' + '//Danger/Alert Message\n' + '<Message type="danger">\n' + '	<h4 className="title">Training Expired!</h4>\n' + '	<p className="body">The training has been expired before you complete it.</p>\n' + '	<p className="info">\n' + '		<strong>Training Name:</strong> Induction Training\n' + '	</p>\n' + '</Message>\n' + '\n' + '//Warning Message\n' + '<Message type="warning">\n' + '	<h4 className="title">Warning!</h4>\n' + '	<p className="body">You have only 2 more days to complete final quiz.</p>\n' + '	<p className="info">\n' + '		<strong>Training Name:</strong> Induction Training\n' + '	</p>\n' + '</Message>\n' + '\n' + '//Success Message\n' + '<Message type="success">\n' + '	<h4 className="title">Completed!</h4>\n' + '	<p className="body">You have been successfuly completed <strong>Induction Training</strong> final quiz</p>\n' + '</Message>',
+				    toasterButton = '//Buttion\n' + '<button className="rui-button rui-button-primary" onClick={this.openToaster}>Show Toaster</button>\n',
+				    toasterMsg = '//Opening Toaster\n' + 'openToaster(){\n' + '	Toaster.show({\n' + '		title: \'Completed!\',\n' + '		body: \'You have been successfuly completed Induction Training final quiz\',\n' + '		type: \'success\',\n' + '		autoClose: true\n' + '	});\n' + '}';
+				return _react2['default'].createElement(
+					'div',
+					null,
+					_react2['default'].createElement(
+						'h1',
+						null,
+						'Messages'
+					),
+					_react2['default'].createElement(
+						'p',
+						null,
+						'Messages are the main method for providing system feedback in the product user interface. There are varius kind of message notifications: confirmations, notices, warnings, info and errors '
+					),
+					_react2['default'].createElement(
+						'p',
+						{ className: 'help' },
+						'(Core Components)'
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'p',
+							{ className: 'head' },
+							'Example'
+						),
+						_react2['default'].createElement(
+							'p',
+							{ className: 'help' },
+							'With HTML'
+						),
+						_react2['default'].createElement(
+							_CompMessage2['default'],
+							{ type: 'default' },
+							_react2['default'].createElement(
+								'h4',
+								{ className: 'title' },
+								'Training Status'
+							),
+							_react2['default'].createElement(
+								'p',
+								{ className: 'body' },
+								'Final quiz for ',
+								_react2['default'].createElement(
+									'strong',
+									null,
+									'Induction Training'
+								),
+								' will available after 21/08/2015.'
+							)
+						),
+						_react2['default'].createElement('br', null),
+						_react2['default'].createElement(
+							_CompMessage2['default'],
+							{ type: 'danger' },
+							_react2['default'].createElement(
+								'h4',
+								{ className: 'title' },
+								'Training Expired!'
+							),
+							_react2['default'].createElement(
+								'p',
+								{ className: 'body' },
+								'The training has been expired before you complete it.'
+							),
+							_react2['default'].createElement(
+								'p',
+								{ className: 'info' },
+								_react2['default'].createElement(
+									'strong',
+									null,
+									'Training Name:'
+								),
+								' Induction Training'
+							)
+						),
+						_react2['default'].createElement('br', null),
+						_react2['default'].createElement(
+							_CompMessage2['default'],
+							{ type: 'warning' },
+							_react2['default'].createElement(
+								'h4',
+								{ className: 'title' },
+								'Warning!'
+							),
+							_react2['default'].createElement(
+								'p',
+								{ className: 'body' },
+								'You have only 2 more days to complete final quiz.'
+							),
+							_react2['default'].createElement(
+								'p',
+								{ className: 'info' },
+								_react2['default'].createElement(
+									'strong',
+									null,
+									'Training Name:'
+								),
+								' Induction Training'
+							)
+						),
+						_react2['default'].createElement('br', null),
+						_react2['default'].createElement(
+							_CompMessage2['default'],
+							{ type: 'success' },
+							_react2['default'].createElement(
+								'h4',
+								{ className: 'title' },
+								'Completed!'
+							),
+							_react2['default'].createElement(
+								'p',
+								{ className: 'body' },
+								'You have been successfuly completed ',
+								_react2['default'].createElement(
+									'strong',
+									null,
+									'Induction Training'
+								),
+								' final quiz'
+							)
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							moduleUsage
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							msgTypes
+						)
+					),
+					_react2['default'].createElement(
+						'h1',
+						null,
+						'Toaster Messages'
+					),
+					_react2['default'].createElement(
+						'p',
+						null,
+						'Toaster Messages the main method fro providing immediate feedback in response to a user action. The messages are shown at the top of the page and like html messages stay for few seconds.'
+					),
+					_react2['default'].createElement(
+						'p',
+						{ className: 'help' },
+						'(Core Components)'
+					),
+					_react2['default'].createElement(
+						'p',
+						{ className: 'help' },
+						_react2['default'].createElement(
+							'strong',
+							null,
+							'Variations '
+						),
+						'(type): info(default), success, danger, warning'
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example' },
+						_react2['default'].createElement(
+							'p',
+							{ className: 'head' },
+							'Example'
+						),
+						_react2['default'].createElement(
+							'button',
+							{ className: 'rui-button rui-button-primary', onClick: this.openToaster },
+							'Show Toaster'
+						)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'example-code' },
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							toasterButton
+						),
+						_react2['default'].createElement(
+							_CodeBlock2['default'],
+							null,
+							toasterMsg
+						)
+					)
+				);
+			}
+		}]);
+
+		return Messages;
+	})(_react2['default'].Component);
+
+	exports['default'] = Messages;
+	module.exports = exports['default'];
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(25);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Message = (function (_React$Component) {
+		_inherits(Message, _React$Component);
+
+		function Message() {
+			_classCallCheck(this, Message);
+
+			_get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+		}
+
+		_createClass(Message, [{
+			key: 'renderIcon',
+			value: function renderIcon(type) {
+				switch (type) {
+					case 'danger':
+						return _react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'highlight_off'
+						);
+					case 'warning':
+						return _react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'warning'
+						);
+					case 'success':
+						return _react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'done'
+						);
+					default:
+						return _react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'info_outline'
+						);
+				}
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'rui-message message-' + this.props.type },
+					_react2['default'].createElement(
+						'div',
+						{ className: 'msg-icon left' },
+						this.renderIcon(this.props.type)
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'msg-content left' },
+						this.props.children
+					)
+				);
+			}
+		}]);
+
+		return Message;
+	})(_react2['default'].Component);
+
+	exports['default'] = Message;
+	module.exports = exports['default'];
+
+/***/ },
+/* 242 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var Toast = (function () {
+		function Toast() {
+			_classCallCheck(this, Toast);
+		}
+
+		//export default Toaster;
+
+		_createClass(Toast, [{
+			key: 'setAttributes',
+			value: function setAttributes(el, attrs) {
+				for (var key in attrs) {
+					el.setAttribute(key, attrs[key]);
+				}
+			}
+		}, {
+			key: 'clearToasters',
+			value: function clearToasters() {
+				var elMsg = document.querySelector('.rui-toaster');
+				if (elMsg) {
+					document.body.removeChild(elMsg);
+				}
+			}
+		}, {
+			key: 'show',
+			value: function show(options) {
+				var icon = undefined,
+				    toast = undefined,
+				    closeLink = undefined,
+				    ruiMsg = undefined;
+				var title = options.title != '' ? options.title : "Message titlle";
+				var body = options.body != '' ? options.body : "Message titlle";
+				var type = options.type != '' ? options.type : "";
+				var autoClose = options.autoClose != '' ? options.autoClose : "Message titlle";
+
+				//clear all toasters
+				this.clearToasters();
+
+				//creating a toaster
+				toast = document.createElement('div');
+				toast.setAttribute('class', 'rui-toaster');
+
+				//creating a close link
+				closeLink = document.createElement('a');
+				this.setAttributes(closeLink, {
+					'href': '#',
+					'class': 'close'
+				});
+				closeLink.insertAdjacentHTML('beforeend', '<i class="material-icons">&#xE5CD;</i>');
+
+				//add close event
+				closeLink.addEventListener('click', function (e) {
+					e.preventDefault();
+					document.body.removeChild(toast);
+				});
+
+				//toaster msg
+				ruiMsg = document.createElement('div');
+				this.setAttributes(ruiMsg, {
+					'class': 'rui-message message-' + type
+				});
+
+				//message icon generate
+				switch (type) {
+					case 'success':
+						icon = '<i class="material-icons">&#xE876;</i>';
+						break;
+					case 'danger':
+						icon = '<i class="material-icons">&#xE888;</i>';
+						break;
+					case 'warning':
+						icon = '<i class="material-icons">&#xE002;</i>';
+					default:
+						icon = '<i class="material-icons">&#xE88F;</i>';
+				}
+
+				//msg content
+				var msgCont = '<div class="msg-icon left">\n\t\t\t\t\t\t\t' + icon + '\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="msg-content left">\n\t\t\t\t\t\t\t<h4 class="title">' + title + '</h4>\n\t\t\t\t\t\t\t<p class="body">' + body + '</p>\n\t\t\t\t\t\t</div>';
+
+				ruiMsg.appendChild(closeLink);
+				ruiMsg.insertAdjacentHTML('beforeend', msgCont);
+				toast.appendChild(ruiMsg);
+				document.body.appendChild(toast);
+
+				//timeout auto close after 4Sec
+				if (autoClose === true) {
+					setTimeout(function () {
+						if (toast) {
+							document.body.removeChild(toast);
+						}
+					}, 4000);
+				}
+			}
+		}]);
+
+		return Toast;
+	})();
+
+	var Toaster = new Toast();
+	exports.Toaster = Toaster;
 
 /***/ }
 /******/ ]);

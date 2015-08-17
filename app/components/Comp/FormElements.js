@@ -140,4 +140,4 @@ Text.propTypes = {
 };
 
 
-export {Input};
+export default Input;
