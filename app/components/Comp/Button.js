@@ -7,8 +7,15 @@ class Button extends React.Component {
 	}
 
 	render() {
+		let btnType = '', btnSize = '';
+		if(this.props.type){
+			btnType = `rui-button-${this.props.type}`;
+		}
+		if(this.props.size){
+			btnSize = `button-${this.props.size}`;
+		}
 		return (
-			<button className={`rui-button ${this.props.className}`} onClick={this.clickEventHandler.bind(this)} >{this.props.btnText}</button>
+			<button {...this.props} className={`rui-button ${btnType} ${btnSize} ${this.props.className}`} onClick={this.clickEventHandler.bind(this)} >{this.props.btnText}</button>
 		);
 	}
 }

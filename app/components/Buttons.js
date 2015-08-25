@@ -7,26 +7,26 @@ class Buttons extends React.Component {
 		console.log("...clicked");
 	}
 	render() {
-		let moduleUsage = 
+		let moduleUsage =
 			'import React from \'react\';\n' +
 			'//Import Button Component\n'+
 			'import {Button} from \'./Comp/Button\';\n',
 
 		usageCode =
 			'//Button Normal\n' +
-			'<Button className="rui-button-primary" btnText="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="primary" btnText="Save" clickBtn={this.handleClick} />\n' +
 			'<Button btnText="Cancel" clickBtn={this.handleClick} /> \n' +
-			'<Button className="rui-button-danger" btnText="Delete" clickBtn={this.handleClick} />\n' +
+			'<Button type="danger" btnText="Delete" clickBtn={this.handleClick} />\n' +
 			'\n' +
 			'//Button Small\n' +
-			'<Button className="rui-button-primary rui-button-sm" btnText="Save" clickBtn={this.handleClick} />\n' +
-			'<Button className="rui-button-sm" btnText="Cancel" clickBtn={this.handleClick} /> \n' +
-			'<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />\n',
-		borderButton = 
+			'<Button type="primary" size="sm" btnText="Save" clickBtn={this.handleClick} />\n' +
+			'<Button size="sm" btnText="Cancel" clickBtn={this.handleClick} /> \n' +
+			'<Button type="danger" size="sm" btnText="Delete" clickBtn={this.handleClick} />\n',
+		borderButton =
 			'//Border only buttons\n' +
-			'<Button className="rui-button-primary button-o" btnText="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="primary" className="button-o" btnText="Save" clickBtn={this.handleClick} />\n' +
 			'<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} />\n' +
-			'<Button className="rui-button-danger button-o" btnText="Delete" clickBtn={this.handleClick} />';
+			'<Button type="danger" className="button-o" btnText="Delete" clickBtn={this.handleClick} />';
 		return (
 			<div>
 				<h1>Buttons</h1>
@@ -34,19 +34,19 @@ class Buttons extends React.Component {
 				<div className="example">
 					<p className="head">Example</p>
 					<p className="help">Button Normal</p>
-					<Button className="rui-button-primary" btnText="Save" clickBtn={this.handleClick} />
-					<Button btnText="Cancel" clickBtn={this.handleClick} /> 
-					<Button className="rui-button-danger" btnText="Delete" clickBtn={this.handleClick} />
+					<Button id="testId" type="primary" btnText="Save" clickBtn={this.handleClick} />
+					<Button btnText="Cancel" clickBtn={this.handleClick} />
+					<Button type="danger" btnText="Delete" clickBtn={this.handleClick} />
 					<br /><br />
 					<p className="help">Button Small</p>
-					<Button className="rui-button-primary rui-button-sm" btnText="Save" clickBtn={this.handleClick} />
-					<Button className="rui-button-sm" btnText="Cancel" clickBtn={this.handleClick} /> 
-					<Button className="rui-button-danger rui-button-sm" btnText="Delete" clickBtn={this.handleClick} />
+					<Button type="primary" size="sm" btnText="Save" clickBtn={this.handleClick} />
+					<Button size="sm" btnText="Cancel" clickBtn={this.handleClick} />
+					<Button type="danger" size="sm" btnText="Delete" clickBtn={this.handleClick} />
 					<br /><br />
 					<p className="help">Border only buttons</p>
-					<Button className="rui-button-primary button-o" btnText="Save" clickBtn={this.handleClick} />
-					<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} /> 
-					<Button className="rui-button-danger button-o" btnText="Delete" clickBtn={this.handleClick} />
+					<Button type="primary" className="button-o" btnText="Save" clickBtn={this.handleClick} />
+					<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} />
+					<Button type="danger" className="button-o" btnText="Delete" clickBtn={this.handleClick} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>
