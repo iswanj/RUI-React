@@ -24904,8 +24904,8 @@
 			key: 'render',
 			value: function render() {
 				var moduleUsage = 'import React from \'react\';\n' + '//Import Button Component\n' + 'import {Button} from \'./Comp/Button\';\n',
-				    usageCode = '//Button Normal\n' + '<Button type="primary" size="large" Label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal" size="large" Label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger" size="large" Label="Save" clickBtn={this.handleClick} />\n' + '\n' + '//Button Small\n' + '<Button type="primary" size="small" Label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal" size="small" Label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger" size="small" Label="Save" clickBtn={this.handleClick} />',
-				    borderButton = '//Border only buttons\n' + '<Button type="primary_o" size="large" Label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal_o" size="large" Label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger_o" size="large" Label="Save" clickBtn={this.handleClick} />\n';
+				    usageCode = '//Button Normal\n' + '<Button type="primary" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger" size="large" label="Save" clickBtn={this.handleClick} />\n' + '\n' + '//Button Small\n' + '<Button type="primary" size="small" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal" size="small" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger" size="small" label="Save" clickBtn={this.handleClick} />',
+				    borderButton = '//Border only buttons\n' + '<Button type="primary_o" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal_o" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger_o" size="large" label="Save" clickBtn={this.handleClick} />\n';
 				return _react2['default'].createElement(
 					'div',
 					null,
@@ -24932,9 +24932,9 @@
 							{ className: 'help' },
 							'Button Normal'
 						),
-						_react2['default'].createElement(_CompButton.Button, { type: 'primary', size: 'large', Label: 'Accept', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton.Button, { type: 'normal', size: 'large', Label: 'Back', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton.Button, { type: 'danger', size: 'large', Label: 'Reject', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'primary', size: 'large', label: 'Accept', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'normal', size: 'large', label: 'Back', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'danger', size: 'large', label: 'Reject', clickBtn: this.handleClick }),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement(
@@ -24942,9 +24942,9 @@
 							{ className: 'help' },
 							'Button small'
 						),
-						_react2['default'].createElement(_CompButton.Button, { type: 'primary', size: 'small', Label: 'Save', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton.Button, { type: 'normal', size: 'small', Label: 'Cancel', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton.Button, { type: 'danger', size: 'small', Label: 'Delete', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'primary', size: 'small', label: 'Save', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'normal', size: 'small', label: 'Cancel', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'danger', size: 'small', label: 'Delete', clickBtn: this.handleClick }),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement(
@@ -24952,9 +24952,9 @@
 							{ className: 'help' },
 							'Border only buttons'
 						),
-						_react2['default'].createElement(_CompButton.Button, { type: 'primary_o', size: 'large', Label: 'Save', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton.Button, { type: 'normal_o', size: 'large', Label: 'Cancel', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton.Button, { type: 'danger_o', size: 'large', Label: 'Delete', clickBtn: this.handleClick })
+						_react2['default'].createElement(_CompButton.Button, { type: 'primary_o', size: 'large', label: 'Save', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'normal_o', size: 'large', label: 'Cancel', clickBtn: this.handleClick }),
+						_react2['default'].createElement(_CompButton.Button, { type: 'danger_o', size: 'large', label: 'Delete', clickBtn: this.handleClick })
 					),
 					_react2['default'].createElement(
 						'div',
@@ -25045,16 +25045,16 @@
 				var _props = this.props;
 				var size = _props.size;
 				var type = _props.type;
-				var Label = _props.Label;
+				var label = _props.label;
 
-				var props = _objectWithoutProperties(_props, ['size', 'type', 'Label']);
+				var props = _objectWithoutProperties(_props, ['size', 'type', 'label']);
 
 				return _react2['default'].createElement(
 					'button',
 					_extends({ style: [_stylesButtonJs2['default'].base, _stylesButtonJs2['default'][size], _stylesButtonJs2['default'][type]],
 						onClick: this.clickEventHandler.bind(this)
 					}, props),
-					Label
+					label
 				);
 			}
 		}]);
@@ -25083,15 +25083,15 @@
 				var _props2 = this.props;
 				var size = _props2.size;
 				var type = _props2.type;
-				var Label = _props2.Label;
+				var label = _props2.label;
 
-				var props = _objectWithoutProperties(_props2, ['size', 'type', 'Label']);
+				var props = _objectWithoutProperties(_props2, ['size', 'type', 'label']);
 
 				return _react2['default'].createElement(
 					'a',
 					_extends({ style: [_stylesButtonJs2['default'].base, _stylesButtonJs2['default'][size], _stylesButtonJs2['default'][type]]
 					}, props),
-					Label
+					label
 				);
 			}
 		}]);
@@ -28951,7 +28951,7 @@
 			value: function render() {
 				var moduleUsage = 'import React from \'react\';\n' + '//Import LinkButton Component\n' + 'import {LinkButton} from \'./Comp/Button\';\n';
 
-				var usageCode = '//Button Normal\n' + '<LinkButton type="primary" size="large" Label="Link Primary" href="#/linkbutons" target="_new"/>\n' + '<LinkButton type="normal" size="large" Label="Link Default" href="#/linkbutons" />\n' + '<LinkButton type="danger" size="large" Label="Link Danger" link="#/linkbutons" />\n' + '\n' + '//Button Small\n' + '<LinkButton type="primary" size="small" Label="Link Primary" href="#/linkbutons" target="_new"/>\n' + '<LinkButton type="normal" size="small" Label="Link Default" href="#/linkbutons" />\n' + '<LinkButton type="danger" size="small" Label="Link Danger" link="#/linkbutons" />\n' + '\n' + '//Border only button\n' + '<LinkButton type="primary_o" size="small" Label="Link Primary" href="#/linkbutons" target="_new"/>\n' + '<LinkButton type="normal_o" size="small" Label="Link Default" href="#/linkbutons" />\n' + '<LinkButton type="danger_o" size="small" Label="Link Danger" link="#/linkbutons" />\n';
+				var usageCode = '//Button Normal\n' + '<LinkButton type="primary" size="large" label="Link Primary" href="#/linkbutons" target="_new"/>\n' + '<LinkButton type="normal" size="large" label="Link Default" href="#/linkbutons" />\n' + '<LinkButton type="danger" size="large" label="Link Danger" link="#/linkbutons" />\n' + '\n' + '//Button Small\n' + '<LinkButton type="primary" size="small" label="Link Primary" href="#/linkbutons" target="_new"/>\n' + '<LinkButton type="normal" size="small" label="Link Default" href="#/linkbutons" />\n' + '<LinkButton type="danger" size="small" label="Link Danger" link="#/linkbutons" />\n' + '\n' + '//Border only button\n' + '<LinkButton type="primary_o" size="small" label="Link Primary" href="#/linkbutons" target="_new"/>\n' + '<LinkButton type="normal_o" size="small" label="Link Default" href="#/linkbutons" />\n' + '<LinkButton type="danger_o" size="small" label="Link Danger" link="#/linkbutons" />\n';
 
 				return _react2['default'].createElement(
 					'div',
@@ -28979,9 +28979,9 @@
 							{ className: 'help' },
 							'Button Normal'
 						),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'primary', size: 'large', Label: 'Link Primary', href: '#/linkbutons', target: '_new' }),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'normal', size: 'large', Label: 'Link Default', href: '#/linkbutons' }),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'danger', size: 'large', Label: 'Link Danger', link: '#/linkbutons' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'primary', size: 'large', label: 'Link Primary', href: '#/linkbutons', target: '_new' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'normal', size: 'large', label: 'Link Default', href: '#/linkbutons' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'danger', size: 'large', label: 'Link Danger', link: '#/linkbutons' }),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement(
@@ -28989,9 +28989,9 @@
 							{ className: 'help' },
 							'Button Small'
 						),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'primary', size: 'small', Label: 'Link Primary', href: '#/linkbutons', target: '_new' }),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'normal', size: 'small', Label: 'Link Default', href: '#/linkbutons' }),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'danger', size: 'small', Label: 'Link Danger', link: '#/linkbutons' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'primary', size: 'small', label: 'Link Primary', href: '#/linkbutons', target: '_new' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'normal', size: 'small', label: 'Link Default', href: '#/linkbutons' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'danger', size: 'small', label: 'Link Danger', link: '#/linkbutons' }),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement(
@@ -28999,9 +28999,9 @@
 							{ className: 'help' },
 							'Border only buttons'
 						),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'primary_o', size: 'small', Label: 'Link Primary', href: '#/linkbutons', target: '_new' }),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'normal_o', size: 'small', Label: 'Link Default', href: '#/linkbutons' }),
-						_react2['default'].createElement(_CompButton.LinkButton, { type: 'danger_o', size: 'small', Label: 'Link Danger', link: '#/linkbutons' })
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'primary_o', size: 'small', label: 'Link Primary', href: '#/linkbutons', target: '_new' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'normal_o', size: 'small', label: 'Link Default', href: '#/linkbutons' }),
+						_react2['default'].createElement(_CompButton.LinkButton, { type: 'danger_o', size: 'small', label: 'Link Danger', link: '#/linkbutons' })
 					),
 					_react2['default'].createElement(
 						'div',

@@ -10,7 +10,7 @@ class Button extends React.Component {
 	}
 
 	render() {
-		const {size, type, Label, ...props} = this.props;
+		const {size, type, label, ...props} = this.props;
 		return (
 			<button style={[
           styles.base,
@@ -20,7 +20,7 @@ class Button extends React.Component {
 				onClick={this.clickEventHandler.bind(this)}
 				{...props}
 			>
-				{Label}
+				{label}
 			</button>
 		);
 	}
@@ -33,7 +33,7 @@ Button.propTypes = {
 //*** Link Button Component
 class LinkButton extends React.Component {
 	render() {
-		const {size, type, Label, ...props} = this.props;
+		const {size, type, label, ...props} = this.props;
 		return (
 			<a style={[
           styles.base,
@@ -42,7 +42,7 @@ class LinkButton extends React.Component {
         ]}
 				{...props}
 			>
-				{Label}
+				{label}
 			</a>
 		);
 	}
