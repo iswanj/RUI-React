@@ -14,19 +14,19 @@ class Buttons extends React.Component {
 
 		usageCode =
 			'//Button Normal\n' +
-			'<Button type="primary" btnText="Save" clickBtn={this.handleClick} />\n' +
-			'<Button btnText="Cancel" clickBtn={this.handleClick} /> \n' +
-			'<Button type="danger" btnText="Delete" clickBtn={this.handleClick} />\n' +
+			'<Button type="primary" size="large" Label="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="normal" size="large" Label="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="danger" size="large" Label="Save" clickBtn={this.handleClick} />\n' +
 			'\n' +
 			'//Button Small\n' +
-			'<Button type="primary" size="sm" btnText="Save" clickBtn={this.handleClick} />\n' +
-			'<Button size="sm" btnText="Cancel" clickBtn={this.handleClick} /> \n' +
-			'<Button type="danger" size="sm" btnText="Delete" clickBtn={this.handleClick} />\n',
+			'<Button type="primary" size="small" Label="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="normal" size="small" Label="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="danger" size="small" Label="Save" clickBtn={this.handleClick} />',
 		borderButton =
 			'//Border only buttons\n' +
-			'<Button type="primary" className="button-o" btnText="Save" clickBtn={this.handleClick} />\n' +
-			'<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} />\n' +
-			'<Button type="danger" className="button-o" btnText="Delete" clickBtn={this.handleClick} />';
+			'<Button type="primary_o" size="large" Label="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="normal_o" size="large" Label="Save" clickBtn={this.handleClick} />\n' +
+			'<Button type="danger_o" size="large" Label="Save" clickBtn={this.handleClick} />\n';
 		return (
 			<div>
 				<h1>Buttons</h1>
@@ -34,19 +34,21 @@ class Buttons extends React.Component {
 				<div className="example">
 					<p className="head">Example</p>
 					<p className="help">Button Normal</p>
-					<Button id="testId" type="primary" btnText="Save" clickBtn={this.handleClick} />
-					<Button btnText="Cancel" clickBtn={this.handleClick} />
-					<Button type="danger" btnText="Delete" clickBtn={this.handleClick} />
-					<br /><br />
-					<p className="help">Button Small</p>
-					<Button type="primary" size="sm" btnText="Save" clickBtn={this.handleClick} />
-					<Button size="sm" btnText="Cancel" clickBtn={this.handleClick} />
-					<Button type="danger" size="sm" btnText="Delete" clickBtn={this.handleClick} />
-					<br /><br />
+					<Button type="primary" size="large" Label="Accept" clickBtn={this.handleClick} />
+					<Button type="normal" size="large" Label="Back" clickBtn={this.handleClick} />
+					<Button type="danger" size="large" Label="Reject" clickBtn={this.handleClick} />
+					<br />
+					<br />
+					<p className="help">Button small</p>
+					<Button type="primary" size="small" Label="Save" clickBtn={this.handleClick} />
+					<Button type="normal" size="small" Label="Cancel" clickBtn={this.handleClick} />
+					<Button type="danger" size="small" Label="Delete" clickBtn={this.handleClick} />
+					<br />
+					<br />
 					<p className="help">Border only buttons</p>
-					<Button type="primary" className="button-o" btnText="Save" clickBtn={this.handleClick} />
-					<Button className="button-o" btnText="Cancel" clickBtn={this.handleClick} />
-					<Button type="danger" className="button-o" btnText="Delete" clickBtn={this.handleClick} />
+					<Button type="primary_o" size="large" Label="Save" clickBtn={this.handleClick} />
+					<Button type="normal_o" size="large" Label="Cancel" clickBtn={this.handleClick} />
+					<Button type="danger_o" size="large" Label="Delete" clickBtn={this.handleClick} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>
