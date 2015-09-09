@@ -1,4 +1,7 @@
+import Radium from 'radium';
 import React from 'react';
+// Button styles
+import styles from './styles/button.js';
 
 //*** Normal Button Component
 class Button extends React.Component {
@@ -7,15 +10,18 @@ class Button extends React.Component {
 	}
 
 	render() {
-		let btnType = '', btnSize = '';
-		if(this.props.type){
-			btnType = `rui-button-${this.props.type}`;
-		}
-		if(this.props.size){
-			btnSize = `button-${this.props.size}`;
-		}
+		const {size, type, Label, ...props} = this.props;
 		return (
-			<button {...this.props} className={`rui-button ${btnType} ${btnSize} ${this.props.className}`} onClick={this.clickEventHandler.bind(this)} >{this.props.btnText}</button>
+			<button style={[
+          styles.base,
+					styles[size],
+          styles[type],
+        ]}
+				onClick={this.clickEventHandler.bind(this)}
+				{...props}
+			>
+				{Label}
+			</button>
 		);
 	}
 }
@@ -24,12 +30,20 @@ Button.propTypes = {
 	clickBtn: React.PropTypes.func.isRequired
 };
 
-
 //*** Link Button Component
 class LinkButton extends React.Component {
 	render() {
+		const {size, type, Label, ...props} = this.props;
 		return (
-			<a className={`rui-button ${this.props.className}`} href={this.props.link} target={this.props.target} >{this.props.btnText}</a>
+			<a style={[
+          styles.base,
+					styles[size],
+          styles[type],
+        ]}
+				{...props}
+			>
+				{Label}
+			</a>
 		);
 	}
 }
@@ -38,4 +52,6 @@ LinkButton.propTypes = {
 	link: React.PropTypes.string.isRequired
 };
 
+Button = Radium(Button);
+LinkButton = Radium(LinkButton);
 export {Button, LinkButton};
