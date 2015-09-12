@@ -10,13 +10,14 @@ import Dialog from '../components/Dialogs';
 import Messages from '../components/Messages';
 import Cards from '../components/Cards';
 import Avatars from '../components/Avatars';
+import Router from 'react-router';
 //<Route name="profile" path="buttons" handler={Buttons} />
-
-import {Router, DefaultRoute, Route} from 'react-router';
+//import {Router, DefaultRoute, Route} from 'react-router';
+let {DefaultRoute, Route, Routes} = Router;
 
 export default (
-	<Route location="history" name="app" path="/" handler={Main} >
-		<DefaultRoute handler={Color} />
+	<Route name="app" path="/" handler={Main} >
+		<DefaultRoute name="color" handler={Color} />
 		<Route name="typography" path="typography" handler={Typography} />
 		<Route name="buttons" path="buttons" handler={Buttons} />
 		<Route name="linkbutons" path="linkbutons" handler={LinkButtons} />

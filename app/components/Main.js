@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteHandler } from 'react-router';
+var {Link, RouteHandler} = require('react-router');
 import Badge from './Comp/Badge';
 import './less/style.less';
 
@@ -9,17 +9,16 @@ class Main extends React.Component{
 			<div>
 				<div className="sidebar col-lg-2 col-md-3">
 					<ul>
-						<li><a href="#/">Color</a></li>
-						<li><a href="#/typography">Typography</a></li>
-						<li><a href="#/buttons">Buttons</a></li>
-						<li><a href="#/linkbutons">Link Buttons</a></li>
-						<li><a href="#/badges">Badges</a></li>
-						<li><a href="#/dialog">Dialog</a> <Badge className="rui-badges-warning-o" label="experiment" /> </li>
-						<li><a href="#/messages">Messages</a></li>
-						<li><a href="#/form">Form</a></li>
-						<li><a href="#/cards">Cards</a></li>
-						<li><a href="#/avatars">Avatars</a></li>
-						<li><a href="#/tabs">Tabs</a></li>
+						<li><Link to="color">Color</Link></li>
+						<li><Link to="typography">Typography</Link></li>
+						<li><Link to="buttons">Buttons</Link></li>
+						<li><Link to="linkbutons">Link Buttons</Link></li>
+						<li><Link to="badges">Badges</Link></li>
+						<li><Link to="form">Dialog</Link> <Badge className="rui-badges-warning-o" label="experiment" /> </li>
+						<li><Link to="dialog">Messages</Link></li>
+						<li><Link to="messages">Form</Link></li>
+						<li><Link to="cards">Cards</Link></li>
+						<li><Link to="avatars">Avatars</Link></li>
 					</ul>
 				</div>
 				<div className="main col-lg-10 col-md-9">

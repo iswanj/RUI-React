@@ -5,19 +5,10 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-		    {
-		      test: /\.js$/,
-		      exclude: /(node_modules|bower_components)/,
-		      loader: 'babel-loader',
-		    },
-		    {
-		      test: /\.less$/,
-		      loader: 'style!css!less'
-		    },
-		    {
-		      test: /\.json$/,
-		      loader: 'json'
-		    },
+		    { test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'babel-loader', },
+		    { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }, // use ! to chain loaders
+				{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }, // inline base64 URLs for <=8k images, direct URLs for the rest
+		    { test: /\.json$/, loader: 'json' },
 		],
 	}
 };

@@ -46,18 +46,18 @@ export default {
     borderColor: Color($.def).darken(0.1).hexString(),
     color: $.primaryDark,
     ':hover': {
-      color: Color($.def).darken(0.1).hexString(),
-      borderColor: Color($.def).darken(0.1).hexString(),
+      color: Color($.primaryDark).darken(0.1).hexString(),
+      borderColor: Color($.def).darken(0.2).hexString(),
       textDecoration: 'none'
     },
     ':focus': {
-      color: Color($.def).darken(0.1).hexString(),
-      borderColor: Color($.def).darken(0.1).hexString(),
+      color: Color($.primaryDark).darken(0.1).hexString(),
+      borderColor: Color($.def).darken(0.2).hexString(),
       textDecoration: 'none'
     },
     ':active': {
-      color: Color($.def).darken(0.1).hexString(),
-      borderColor: Color($.def).darken(0.1).hexString(),
+      color: Color($.primaryDark).darken(0.1).hexString(),
+      borderColor: Color($.def).darken(0.2).hexString(),
       textDecoration: 'none'
     }
   },

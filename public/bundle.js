@@ -60,8 +60,12 @@
 
 	var _configRoutes2 = _interopRequireDefault(_configRoutes);
 
-	_reactRouter2['default'].run(_configRoutes2['default'], function (Root, state) {
-		_react2['default'].render(_react2['default'].createElement(Root, state), document.getElementById('app'));
+	var DefaultRoute = _reactRouter2['default'].DefaultRoute;
+	var Route = _reactRouter2['default'].Route;
+	var Routes = _reactRouter2['default'].Routes;
+
+	_reactRouter2['default'].run(_configRoutes2['default'], _reactRouter2['default'].HistoryLocation, function (Handler, state) {
+		_react2['default'].render(_react2['default'].createElement(Handler, state), document.getElementById('app'));
 	});
 
 /***/ },
@@ -23633,23 +23637,28 @@
 
 	var _componentsAvatars2 = _interopRequireDefault(_componentsAvatars);
 
-	//<Route name="profile" path="buttons" handler={Buttons} />
-
 	var _reactRouter = __webpack_require__(180);
 
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
+
+	//<Route name="profile" path="buttons" handler={Buttons} />
+	//import {Router, DefaultRoute, Route} from 'react-router';
+	var DefaultRoute = _reactRouter2['default'].DefaultRoute;
+	var Route = _reactRouter2['default'].Route;
+	var Routes = _reactRouter2['default'].Routes;
 	exports['default'] = _react2['default'].createElement(
-		_reactRouter.Route,
-		{ location: 'history', name: 'app', path: '/', handler: _componentsMain2['default'] },
-		_react2['default'].createElement(_reactRouter.DefaultRoute, { handler: _componentsColor2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'typography', path: 'typography', handler: _componentsTypography2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'buttons', path: 'buttons', handler: _componentsButtons2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'linkbutons', path: 'linkbutons', handler: _componentsLinkButtons2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'badges', path: 'badges', handler: _componentsBadges2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'form', path: 'form', handler: _componentsForm2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'dialog', path: 'dialog', handler: _componentsDialogs2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'messages', path: 'messages', handler: _componentsMessages2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'cards', path: 'cards', handler: _componentsCards2['default'] }),
-		_react2['default'].createElement(_reactRouter.Route, { name: 'avatars', path: 'avatars', handler: _componentsAvatars2['default'] })
+		Route,
+		{ name: 'app', path: '/', handler: _componentsMain2['default'] },
+		_react2['default'].createElement(DefaultRoute, { name: 'color', handler: _componentsColor2['default'] }),
+		_react2['default'].createElement(Route, { name: 'typography', path: 'typography', handler: _componentsTypography2['default'] }),
+		_react2['default'].createElement(Route, { name: 'buttons', path: 'buttons', handler: _componentsButtons2['default'] }),
+		_react2['default'].createElement(Route, { name: 'linkbutons', path: 'linkbutons', handler: _componentsLinkButtons2['default'] }),
+		_react2['default'].createElement(Route, { name: 'badges', path: 'badges', handler: _componentsBadges2['default'] }),
+		_react2['default'].createElement(Route, { name: 'form', path: 'form', handler: _componentsForm2['default'] }),
+		_react2['default'].createElement(Route, { name: 'dialog', path: 'dialog', handler: _componentsDialogs2['default'] }),
+		_react2['default'].createElement(Route, { name: 'messages', path: 'messages', handler: _componentsMessages2['default'] }),
+		_react2['default'].createElement(Route, { name: 'cards', path: 'cards', handler: _componentsCards2['default'] }),
+		_react2['default'].createElement(Route, { name: 'avatars', path: 'avatars', handler: _componentsAvatars2['default'] })
 	);
 	module.exports = exports['default'];
 
@@ -23677,13 +23686,16 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(180);
-
 	var _CompBadge = __webpack_require__(221);
 
 	var _CompBadge2 = _interopRequireDefault(_CompBadge);
 
 	__webpack_require__(222);
+
+	var _require = __webpack_require__(180);
+
+	var Link = _require.Link;
+	var RouteHandler = _require.RouteHandler;
 
 	var Main = (function (_React$Component) {
 		_inherits(Main, _React$Component);
@@ -23710,8 +23722,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/' },
+									Link,
+									{ to: 'color' },
 									'Color'
 								)
 							),
@@ -23719,8 +23731,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/typography' },
+									Link,
+									{ to: 'typography' },
 									'Typography'
 								)
 							),
@@ -23728,8 +23740,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/buttons' },
+									Link,
+									{ to: 'buttons' },
 									'Buttons'
 								)
 							),
@@ -23737,8 +23749,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/linkbutons' },
+									Link,
+									{ to: 'linkbutons' },
 									'Link Buttons'
 								)
 							),
@@ -23746,8 +23758,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/badges' },
+									Link,
+									{ to: 'badges' },
 									'Badges'
 								)
 							),
@@ -23755,8 +23767,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/dialog' },
+									Link,
+									{ to: 'form' },
 									'Dialog'
 								),
 								' ',
@@ -23767,8 +23779,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/messages' },
+									Link,
+									{ to: 'dialog' },
 									'Messages'
 								)
 							),
@@ -23776,8 +23788,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/form' },
+									Link,
+									{ to: 'messages' },
 									'Form'
 								)
 							),
@@ -23785,8 +23797,8 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/cards' },
+									Link,
+									{ to: 'cards' },
 									'Cards'
 								)
 							),
@@ -23794,18 +23806,9 @@
 								'li',
 								null,
 								_react2['default'].createElement(
-									'a',
-									{ href: '#/avatars' },
+									Link,
+									{ to: 'avatars' },
 									'Avatars'
-								)
-							),
-							_react2['default'].createElement(
-								'li',
-								null,
-								_react2['default'].createElement(
-									'a',
-									{ href: '#/tabs' },
-									'Tabs'
 								)
 							)
 						)
@@ -23813,7 +23816,7 @@
 					_react2['default'].createElement(
 						'div',
 						{ className: 'main col-lg-10 col-md-9' },
-						_react2['default'].createElement(_reactRouter.RouteHandler, this.props)
+						_react2['default'].createElement(RouteHandler, this.props)
 					)
 				);
 			}
@@ -26534,18 +26537,18 @@
 	    borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
 	    color: _utilVariables2['default'].primaryDark,
 	    ':hover': {
-	      color: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
-	      borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
+	      color: (0, _color2['default'])(_utilVariables2['default'].primaryDark).darken(0.1).hexString(),
+	      borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.2).hexString(),
 	      textDecoration: 'none'
 	    },
 	    ':focus': {
-	      color: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
-	      borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
+	      color: (0, _color2['default'])(_utilVariables2['default'].primaryDark).darken(0.1).hexString(),
+	      borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.2).hexString(),
 	      textDecoration: 'none'
 	    },
 	    ':active': {
-	      color: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
-	      borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.1).hexString(),
+	      color: (0, _color2['default'])(_utilVariables2['default'].primaryDark).darken(0.1).hexString(),
+	      borderColor: (0, _color2['default'])(_utilVariables2['default'].def).darken(0.2).hexString(),
 	      textDecoration: 'none'
 	    }
 	  },
