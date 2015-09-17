@@ -16,11 +16,11 @@ class Form extends React.Component {
 	    });
 	}
 	render() {
-		let moduleUsage = 
+		let moduleUsage =
 			'import React from \'react\';\n' +
 			'//Import React Form \n' +
 			'import Input from \'./Comp/FormElements\';\n',
-			firstExampleJs = 
+			firstExampleJs =
 				'constructor(){\n' +
 				'	super();\n' +
 				'	this.state = {\n' +
@@ -32,7 +32,7 @@ class Form extends React.Component {
 				'		inputValue: this.refs.input.getValue()\n' +
 				'	});\n' +
 				'}\n',
-			firstExampleHtml = 
+			firstExampleHtml =
 				'<form className="rui-form">\n' +
 				'	<Input type="text"\n' +
 				'		className="additional_class"\n' +
@@ -44,7 +44,7 @@ class Form extends React.Component {
 				'		onChange={this.handleChange.bind(this)}\n' +
 				'	/>\n' +
 				'</form>',
-			inputElements = 
+			inputElements =
 				'<Input type="text"\n' +
 				'	className="additional_class"\n' +
 				'	label="Default input"\n' +
@@ -63,7 +63,7 @@ class Form extends React.Component {
 				'	className="medium-input"\n' +
 				'	label="Medium input"\n' +
 				'	id="inputMedium"\n' +
-				'	description="Your medium width input."\n' + 
+				'	description="Your medium width input."\n' +
 				'/>\n' +
 				'<Input type="text"\n' +
 				'	className="short-input"\n' +
@@ -77,13 +77,13 @@ class Form extends React.Component {
 				'	placeholder="Disabled input"\n' +
 				'	disabled="disabled"\n' +
 				'/>',
-			textAreaCode = 
+			textAreaCode =
 				'<Input type="textarea"\n' +
 				'	label="Comment"\n' +
 				'	id="inputTextarea"\n' +
 				'	placeholder="Your comment here..."\n' +
 				'/>',
-			selectCode = 
+			selectCode =
 				'<Input type="select"\n' +
 				'	label="Dropdown"\n' +
 				'	id="inputDropdown"\n' +
@@ -112,7 +112,7 @@ class Form extends React.Component {
 				'	<option value="opt5">option five</option>\n' +
 				'	<option value="opt6">option six</option>\n' +
 				'</Input>',
-			radioNcheckbox = 
+			radioNcheckbox =
 				'<Input type="radio"\n' +
 				'	label="Save as a blog post"\n' +
 				'	defaultChecked="checked"\n' +
@@ -125,7 +125,7 @@ class Form extends React.Component {
 				'	defaultChecked="checked"\n' +
 				'	id="checkBoxOne"\n' +
 				'/>',
-			fileuploader = 
+			fileuploader =
 				'<Input type="file"\n' +
 				'	label="Upload file"\n' +
 				'	id="fileUpload"\n' +
@@ -168,25 +168,25 @@ class Form extends React.Component {
 							id="inputdef"
 							placeholder="input placeholder"
 							required={true}
-							description="Your default width input." 
+							description="Your default width input."
 						/>
 						<Input type="text"
 							className="long-input"
 							label="Long input"
 							id="inputLong"
-							description="Your long width input." 
+							description="Your long width input."
 						/>
 						<Input type="text"
 							className="medium-input"
 							label="Medium input"
 							id="inputMedium"
-							description="Your medium width input." 
+							description="Your medium width input."
 						/>
 						<Input type="text"
 							className="short-input"
 							label="Short input"
 							id="inputShort"
-							description="Your short width input." 
+							description="Your short width input."
 						/>
 						<Input type="text"
 							label="Disabled input"

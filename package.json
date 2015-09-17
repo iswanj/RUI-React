@@ -37,6 +37,6 @@
     "express": "^4.13.3",
     "radium": "^0.13.8",
     "react": "^0.13.3",
-    "react-router": "^0.13.3"
+    "react-router": "^1.0.0-rc1"
   }
 }

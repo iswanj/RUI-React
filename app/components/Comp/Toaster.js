@@ -31,8 +31,8 @@ class Toast {
 			'class': 'close',
 		});
 		closeLink.insertAdjacentHTML('beforeend','<i class="material-icons">&#xE5CD;</i>');
-		
-		//add close event 
+
+		//add close event
 		closeLink.addEventListener('click', (e) => {
 			e.preventDefault();
 			document.body.removeChild(toast);
