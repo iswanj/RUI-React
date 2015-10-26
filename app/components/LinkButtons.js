@@ -1,8 +1,12 @@
 import React from 'react';
-import {LinkButton} from './Comp/Button';
+import Button, {LinkButton} from './Comp/Button';
 import CodeBlock from './CodeBlock';
 
 class LinkButtons extends React.Component {
+	handleClick(){
+
+	}
+	
 	render() {
 		let moduleUsage =
 			'import React from \'react\';\n' +
@@ -32,19 +36,20 @@ class LinkButtons extends React.Component {
 				<div className="example">
 					<p className="head">Example</p>
 					<p className="help">Button Normal</p>
-					<LinkButton type="primary" size="large" label="Link Primary" href="#/linkbutons" target="_new"/>
-					<LinkButton type="normal" size="large" label="Link Default" href="#/linkbutons" />
+					<Button type="danger" size="large" label="Sample Button" clickBtn={this.handleClick} />
+					<LinkButton type="primary" size="large" label="Link Primary" link="#/linkbutons" target="_new"/>
+					<LinkButton type="normal" size="large" label="Link Default" link="#/linkbutons" />
 					<LinkButton type="danger" size="large" label="Link Danger" link="#/linkbutons" />
 					<br /><br />
 					<p className="help">Button Small</p>
-					<LinkButton type="primary" size="small" label="Link Primary" href="#/linkbutons" target="_new"/>
-					<LinkButton type="normal" size="small" label="Link Default" href="#/linkbutons" />
+					<LinkButton type="primary" size="small" label="Link Primary" link="#/linkbutons" target="_new"/>
+					<LinkButton type="normal" size="small" label="Link Default" link="#/linkbutons" />
 					<LinkButton type="danger" size="small" label="Link Danger" link="#/linkbutons" />
 					<br />
 					<br />
 					<p className="help">Border only buttons</p>
-					<LinkButton type="primary_o" size="small" label="Link Primary" href="#/linkbutons" target="_new"/>
-					<LinkButton type="normal_o" size="small" label="Link Default" href="#/linkbutons" />
+					<LinkButton type="primary_o" size="small" label="Link Primary" link="#/linkbutons" target="_new"/>
+					<LinkButton type="normal_o" size="small" label="Link Default" link="#/linkbutons" />
 					<LinkButton type="danger_o" size="small" label="Link Danger" link="#/linkbutons" />
 				</div>
 				<div className="example-code">

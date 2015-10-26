@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './styles/button.js';
 
 //*** Normal Button Component
+@Radium
 class Button extends React.Component {
 	clickEventHandler(){
 		this.props.clickBtn();
@@ -31,6 +32,7 @@ Button.propTypes = {
 };
 
 //*** Link Button Component
+@Radium
 class LinkButton extends React.Component {
 	render() {
 		const {size, type, label, ...props} = this.props;
@@ -51,7 +53,5 @@ class LinkButton extends React.Component {
 LinkButton.propTypes = {
 	link: React.PropTypes.string.isRequired
 };
-
-Button = Radium(Button);
-LinkButton = Radium(LinkButton);
-export {Button, LinkButton};
+export default Button;
+export {LinkButton};
