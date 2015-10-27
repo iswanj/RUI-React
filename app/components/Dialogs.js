@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from './Comp/Button';
+import Button from './Comp/Button';
 import Dialog from './Comp/Dialog';
 import CodeBlock from './CodeBlock';
 
@@ -57,8 +57,8 @@ class Dialogs extends React.Component {
 				<p className="help">( Core Components )</p>
 				<div className="example">
 					<p className="head">Example</p>
-					<Button className="rui-button-primary" btnText="Open Dialog" clickBtn={this.openDialog} />
-					<Button className="rui-button-danger button-o" btnText="Open Error Dialog" clickBtn={this.openErrorDialog} />
+					<Button type="primary" size="large" label="Open Dialog" clickBtn={this.openDialog} />
+					<Button type="danger" size="large" label="Open Error Dialog" clickBtn={this.openErrorDialog} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>

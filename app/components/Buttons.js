@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from './Comp/Button';
+import Button from './Comp/Button';
 import CodeBlock from './CodeBlock';
 
 class Buttons extends React.Component {
@@ -12,16 +12,21 @@ class Buttons extends React.Component {
 			'//Import Button Component\n'+
 			'import {Button} from \'./Comp/Button\';\n',
 
-		usageCode =
-			'//Button Normal\n' +
-			'<Button type="primary" size="large" label="Save" clickBtn={this.handleClick} />\n' +
-			'<Button type="normal" size="large" label="Save" clickBtn={this.handleClick} />\n' +
-			'<Button type="danger" size="large" label="Save" clickBtn={this.handleClick} />\n' +
-			'\n' +
-			'//Button Small\n' +
-			'<Button type="primary" size="small" label="Save" clickBtn={this.handleClick} />\n' +
-			'<Button type="normal" size="small" label="Save" clickBtn={this.handleClick} />\n' +
-			'<Button type="danger" size="small" label="Save" clickBtn={this.handleClick} />',
+		normalBtn =
+				'<Button type="primary" label="Accept" clickBtn={this.handleClick} />\n' +
+				'<Button type="normal" label="Back" clickBtn={this.handleClick} />\n' +
+				'<Button type="secondary" label="Save a Life" clickBtn={this.handleClick} />\n' +
+				'<Button type="danger" label="Reject" clickBtn={this.handleClick} />',
+		smallBtn =
+				'<Button type="primary" size="small" label="Save" clickBtn={this.handleClick} />\n' +
+				'<Button type="normal" size="small" label="Cancel" clickBtn={this.handleClick} />\n' +
+				'<Button type="secondary" size="small" label="Save a Life" clickBtn={this.handleClick} />\n' +
+				'<Button type="danger" size="small" label="Delete" clickBtn={this.handleClick} />',
+		largeBtn =
+				'<Button type="primary" size="large" label="Save" clickBtn={this.handleClick} />\n' +
+				'<Button type="normal" size="large" label="Cancel" clickBtn={this.handleClick} />\n' +
+				'<Button type="secondary" size="large" label="Save a Life" clickBtn={this.handleClick} />\n' +
+				'<Button type="danger" size="large" label="Delete" clickBtn={this.handleClick} />',
 		borderButton =
 			'//Border only buttons\n' +
 			'<Button type="primary_o" size="large" label="Save" clickBtn={this.handleClick} />\n' +
@@ -34,29 +39,54 @@ class Buttons extends React.Component {
 				<div className="example">
 					<p className="head">Example</p>
 					<p className="help">Button Normal</p>
-					<Button type="primary" size="large" label="Accept" clickBtn={this.handleClick} />
-					<Button type="normal" size="large" label="Back" clickBtn={this.handleClick} />
-					<Button type="danger" size="large" label="Reject" clickBtn={this.handleClick} />
-					<br />
-					<br />
-					<p className="help">Button small</p>
-					<Button type="primary" size="small" label="Save" clickBtn={this.handleClick} />
-					<Button type="normal" size="small" label="Cancel" clickBtn={this.handleClick} />
-					<Button type="danger" size="small" label="Delete" clickBtn={this.handleClick} />
-					<br />
-					<br />
-					<p className="help">Border only buttons</p>
-					<Button type="primary_o" size="large" label="Save" clickBtn={this.handleClick} />
-					<Button type="normal_o" size="large" label="Cancel" clickBtn={this.handleClick} />
-					<Button type="danger_o" size="large" label="Delete" clickBtn={this.handleClick} />
+					<Button type="primary" label="Accept" clickBtn={this.handleClick} />
+					<Button type="normal" label="Back" clickBtn={this.handleClick} />
+					<Button type="secondary" label="Save a Life" clickBtn={this.handleClick} />
+					<Button type="danger" label="Reject" clickBtn={this.handleClick} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>
 						{moduleUsage}
 					</CodeBlock>
 					<CodeBlock>
-						{usageCode}
+						{normalBtn}
 					</CodeBlock>
+				</div>
+				<div className="example">
+					<p className="head">Example</p>
+					<p className="help">Button large</p>
+					<Button type="primary" size="large" label="Save" clickBtn={this.handleClick} />
+					<Button type="normal" size="large" label="Cancel" clickBtn={this.handleClick} />
+					<Button type="secondary" size="large" label="Save a Life" clickBtn={this.handleClick} />
+					<Button type="danger" size="large" label="Delete" clickBtn={this.handleClick} />
+				</div>
+				<div className="example-code">
+					<CodeBlock>
+						{largeBtn}
+					</CodeBlock>
+				</div>
+				<div className="example">
+					<p className="head">Example</p>
+					<p className="help">Button small</p>
+					<Button type="primary" size="small" label="Save" clickBtn={this.handleClick} />
+					<Button type="normal" size="small" label="Cancel" clickBtn={this.handleClick} />
+					<Button type="secondary" size="small" label="Save a Life" clickBtn={this.handleClick} />
+					<Button type="danger" size="small" label="Delete" clickBtn={this.handleClick} />
+				</div>
+				<div className="example-code">
+					<CodeBlock>
+						{smallBtn}
+					</CodeBlock>
+				</div>
+				<div className="example">
+					<p className="head">Example</p>
+					<p className="help">Border only buttons</p>
+					<Button type="primary_o" label="Save" clickBtn={this.handleClick} />
+					<Button type="normal_o" label="Cancel" clickBtn={this.handleClick} />
+					<Button type="secondary_o" label="Save a Life" clickBtn={this.handleClick} />
+					<Button type="danger_o" label="Delete" clickBtn={this.handleClick} />
+				</div>
+				<div className="example-code">
 					<CodeBlock>
 						{borderButton}
 					</CodeBlock>
