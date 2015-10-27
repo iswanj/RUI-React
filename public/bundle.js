@@ -25554,6 +25554,8 @@
 		}, {
 			key: 'renderRouteLink',
 			value: function renderRouteLink() {
+				var _this2 = this;
+
 				var _props2 = this.props;
 				var size = _props2.size;
 				var type = _props2.type;
@@ -25562,12 +25564,23 @@
 
 				var props = _objectWithoutProperties(_props2, ['size', 'type', 'label', 'href']);
 
-				var buttonStyle = [_stylesButtonJs2['default'].base, size != undefined ? _stylesButtonJs2['default'].normal : _stylesButtonJs2['default'][size], _stylesButtonJs2['default'][type]];
+				var buttonStyle = (0, _m2['default'])(_stylesButtonJs2['default'].base, size === undefined ? _stylesButtonJs2['default'].normalSize : _stylesButtonJs2['default'][size], _stylesButtonJs2['default'][type], this.state.hovered && _stylesButtonJs2['default'][type + 'Hovered'], this.state.mouseDown && _stylesButtonJs2['default'][type + 'Clicked']),
+				    handleMouseEnter = function handleMouseEnter() {
+					_this2.handleMouseEnter();
+				},
+				    handleMouseDown = function handleMouseDown() {
+					_this2.handleMouseDown();
+				};
+
 				return _react2['default'].createElement(
 					_reactRouter.Link,
 					_extends({
 						style: buttonStyle,
-						to: href
+						to: href,
+						onMouseEnter: handleMouseEnter,
+						onMouseLeave: handleMouseEnter,
+						onMouseDown: handleMouseDown,
+						onMouseUp: handleMouseDown
 					}, props),
 					label
 				);
@@ -25575,6 +25588,8 @@
 		}, {
 			key: 'renderLink',
 			value: function renderLink() {
+				var _this3 = this;
+
 				var _props3 = this.props;
 				var size = _props3.size;
 				var type = _props3.type;
@@ -25584,13 +25599,24 @@
 
 				var props = _objectWithoutProperties(_props3, ['size', 'type', 'label', 'href', 'target']);
 
-				var buttonStyle = [_stylesButtonJs2['default'].base, size != undefined ? _stylesButtonJs2['default'].normal : _stylesButtonJs2['default'][size], _stylesButtonJs2['default'][type]];
+				var buttonStyle = (0, _m2['default'])(_stylesButtonJs2['default'].base, size === undefined ? _stylesButtonJs2['default'].normalSize : _stylesButtonJs2['default'][size], _stylesButtonJs2['default'][type], this.state.hovered && _stylesButtonJs2['default'][type + 'Hovered'], this.state.mouseDown && _stylesButtonJs2['default'][type + 'Clicked']),
+				    handleMouseEnter = function handleMouseEnter() {
+					_this3.handleMouseEnter();
+				},
+				    handleMouseDown = function handleMouseDown() {
+					_this3.handleMouseDown();
+				};
+
 				return _react2['default'].createElement(
 					'a',
 					_extends({
 						style: buttonStyle,
 						href: href,
-						target: target
+						target: target,
+						onMouseEnter: handleMouseEnter,
+						onMouseLeave: handleMouseEnter,
+						onMouseDown: handleMouseDown,
+						onMouseUp: handleMouseDown
 					}, props),
 					label
 				);
@@ -25613,6 +25639,10 @@
 
 	Button.propTypes = {
 		clickBtn: _react2['default'].PropTypes.func
+	};
+
+	Button.defaultProps = {
+		label: 'Button'
 	};
 
 	exports['default'] = Button;

@@ -52,15 +52,24 @@ class Button extends React.Component {
 
 	renderRouteLink() {
 		const {size, type, label, href, ...props} = this.props;
-		let buttonStyle = [
+		let buttonStyle = mergeObjects(
 			styles.base,
-			(size != undefined) ? styles.normal : styles[size],
+			(size === undefined) ? styles.normalSize : styles[size],
 			styles[type],
-		];
+			this.state.hovered && styles[`${type}Hovered`],
+			this.state.mouseDown && styles[`${type}Clicked`],
+		),
+		handleMouseEnter = () => { this.handleMouseEnter(); },
+		handleMouseDown = () => { this.handleMouseDown(); };
+
 		return (
 			<Link
 				style={buttonStyle}
 				to={href}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseEnter}
+				onMouseDown={handleMouseDown}
+				onMouseUp={handleMouseDown}
 				{...props}
 			>
 				{label}
@@ -70,16 +79,25 @@ class Button extends React.Component {
 
 	renderLink() {
 		const {size, type, label, href, target, ...props} = this.props;
-		let buttonStyle = [
+		let buttonStyle = mergeObjects(
 			styles.base,
-			(size != undefined) ? styles.normal : styles[size],
+			(size === undefined) ? styles.normalSize : styles[size],
 			styles[type],
-		];
+			this.state.hovered && styles[`${type}Hovered`],
+			this.state.mouseDown && styles[`${type}Clicked`],
+		),
+		handleMouseEnter = () => { this.handleMouseEnter(); },
+		handleMouseDown = () => { this.handleMouseDown(); };
+
 		return (
 			<a
 				style={buttonStyle}
 				href={href}
 				target={target}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseEnter}
+				onMouseDown={handleMouseDown}
+				onMouseUp={handleMouseDown}
 				{...props}
 			>
 				{label}
@@ -102,5 +120,8 @@ Button.propTypes = {
 	clickBtn: React.PropTypes.func
 };
 
+Button.defaultProps = {
+	label: 'Button'
+}
 
 export default Button;
