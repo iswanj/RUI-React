@@ -16,13 +16,13 @@ class Dialogs extends React.Component {
     }
 
 	render() {
-		let moduleUsage = 
+		let moduleUsage =
 			'import React from \'react\';\n' +
 			'//Import Dialog Component\n' +
 			'import {Button} from \'./Comp/Button\';\n' +
 			'import Dialog from \'./Comp/Dialog\';\n',
 
-			dialogDefault = 
+			dialogDefault =
 				'<Dialog id="my-dialog2" Dtitle="Dialog Title">\n' +
 				'	<div className="dialog-body">\n' +
 				'		Dialog body\n' +
@@ -31,7 +31,7 @@ class Dialogs extends React.Component {
 				'		<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>\n' +
 				'	</div>\n' +
                 '</Dialog>',
-            dialogDanger = 
+            dialogDanger =
             	'<Dialog className="dialog-warning" id="my-dialog3" Dtitle="Danger Dialog Title">\n' +
 				'	<div className="dialog-body">\n' +
 				'		Danger dialog body\n' +
@@ -40,7 +40,7 @@ class Dialogs extends React.Component {
 				'		<button className="rui-button right" onClick={this.closeD.bind(this)}>Close</button>\n' +
 				'	</div>\n' +
 				'</Dialog>',
-			dialogOpen = 
+			dialogOpen =
 				'//Open Dialog\n' +
 				'openDialog() {\n' +
 			    '    Dialog.openDialog("#my-dialog2");\n' +
@@ -57,8 +57,8 @@ class Dialogs extends React.Component {
 				<p className="help">( Core Components )</p>
 				<div className="example">
 					<p className="head">Example</p>
-					<Button type="primary" size="large" label="Open Dialog" clickBtn={this.openDialog} />
-					<Button type="danger" size="large" label="Open Error Dialog" clickBtn={this.openErrorDialog} />
+					<Button type="primary" size="large" label="Open Dialog" onClick={this.openDialog} />
+					<Button type="danger" size="large" label="Open Error Dialog" onClick={this.openErrorDialog} />
 				</div>
 				<div className="example-code">
 					<CodeBlock>
@@ -77,7 +77,7 @@ class Dialogs extends React.Component {
 						{dialogClose}
 					</CodeBlock>
 				</div>
-				
+
 				<Dialog id="my-dialog2" Dtitle="Dialog Title">
 					<div className="dialog-body">
 						Dialog body

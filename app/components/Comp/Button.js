@@ -117,7 +117,7 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-	clickBtn: React.PropTypes.func
+	onClick: React.PropTypes.func
 };
 
 Button.defaultProps = {

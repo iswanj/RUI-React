@@ -24665,47 +24665,13 @@
 						{ className: 'cl-wrap' },
 						_react2['default'].createElement(
 							'div',
-							{ className: 'color-slot color-dark' },
-							'Dark',
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								{ className: 'hash' },
-								'#1d2027'
-							),
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								null,
-								'( Shark )'
-							)
-						),
-						_react2['default'].createElement(
-							'div',
-							{ className: 'color-slot color-primary-dark' },
-							'Primary Dark',
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								{ className: 'hash' },
-								'#2e323b'
-							),
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								null,
-								'( Charade )'
-							)
-						),
-						_react2['default'].createElement(
-							'div',
 							{ className: 'color-slot color-primary' },
 							'Primary',
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								{ className: 'hash' },
-								'#1e90ff'
+								'#1f90ff'
 							),
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
@@ -24733,36 +24699,19 @@
 						),
 						_react2['default'].createElement(
 							'div',
-							{ className: 'color-slot color-success-light' },
-							'Success Light',
+							{ className: 'color-slot color-secondary' },
+							'Secondary',
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								{ className: 'hash' },
-								'#67ab49'
+								'#fcb117'
 							),
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								null,
-								'( Apple )'
-							)
-						),
-						_react2['default'].createElement(
-							'div',
-							{ className: 'color-slot color-info' },
-							'Info',
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								{ className: 'hash' },
-								'#439fe0'
-							),
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								null,
-								'( Picton Blue )'
+								'( Sun )'
 							)
 						),
 						_react2['default'].createElement(
@@ -24801,36 +24750,19 @@
 						),
 						_react2['default'].createElement(
 							'div',
-							{ className: 'color-slot color-yellow' },
-							'Yellow',
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								{ className: 'hash' },
-								'#f6c342'
-							),
-							_react2['default'].createElement('br', null),
-							_react2['default'].createElement(
-								'span',
-								null,
-								'( Saffron )'
-							)
-						),
-						_react2['default'].createElement(
-							'div',
 							{ className: 'color-slot color-default' },
 							'Default',
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								{ className: 'hash' },
-								'#f5f5f5'
+								'#eeeeee'
 							),
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								null,
-								'( Wild Sand )'
+								'( Gallery )'
 							)
 						)
 					),
@@ -24845,35 +24777,35 @@
 						_react2['default'].createElement(
 							'div',
 							{ className: 'color-slot color-txt' },
-							'Text',
+							'Normal Text',
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								{ className: 'hash' },
-								'#2e323b'
+								'#333333'
 							),
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								null,
-								'( Charade )'
+								'( Mine Shaft )'
 							)
 						),
 						_react2['default'].createElement(
 							'div',
 							{ className: 'color-slot color-subtext' },
-							'Sub Text',
+							'Text Secondary',
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								{ className: 'hash' },
-								'#505666'
+								'#666666'
 							),
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								null,
-								'( Trout )'
+								'( Ironside Gray )'
 							)
 						),
 						_react2['default'].createElement(
@@ -24884,13 +24816,13 @@
 							_react2['default'].createElement(
 								'span',
 								{ className: 'hash' },
-								'#6A7387'
+								'#888888'
 							),
 							_react2['default'].createElement('br', null),
 							_react2['default'].createElement(
 								'span',
 								null,
-								'( Pale Sky )'
+								'( Taupe gray )'
 							)
 						)
 					)
@@ -24941,7 +24873,7 @@
 
 
 	// module
-	exports.push([module.id, ".color-slot {\n  width: 100px;\n  height: 70px;\n  float: left;\n  margin-right: .4em;\n  color: #fafafa;\n  text-align: center;\n  padding-top: 1em;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px;\n  color: .9em;\n}\n.color-slot span {\n  font-size: .8em;\n}\n.color-slot span.hash {\n  text-transform: uppercase;\n}\n.color-dark {\n  background-color: #1d2027;\n}\n.color-primary-dark {\n  background: #2e323b;\n}\n.color-primary {\n  background-color: #1e90ff;\n}\n.color-success {\n  background-color: #14892c;\n}\n.color-success-light {\n  background-color: #67ab49;\n}\n.color-info {\n  background-color: #439fe0;\n}\n.color-warning {\n  background-color: #f79232;\n}\n.color-danger {\n  background-color: #d04437;\n}\n.color-yellow {\n  background-color: #f6c342;\n}\n.color-default {\n  background-color: #f5f5f5;\n  color: #2e323b;\n}\nh3 {\n  clear: both;\n  margin-top: 1em;\n}\n.cl-wrap {\n  width: 100%;\n  float: left;\n}\n.color-txt {\n  background-color: #2e323b;\n}\n.color-subtext {\n  background-color: #505666;\n}\n.color-textsmall {\n  background-color: #6A7387;\n}\n", ""]);
+	exports.push([module.id, ".color-slot {\n  width: 100px;\n  height: 70px;\n  float: left;\n  margin-right: .4em;\n  color: #fafafa;\n  text-align: center;\n  padding-top: 1em;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px;\n  color: .9em;\n}\n.color-slot span {\n  font-size: .8em;\n}\n.color-slot span.hash {\n  text-transform: uppercase;\n}\n.color-primary {\n  background-color: #1f90ff;\n}\n.color-success {\n  background-color: #14892c;\n}\n.color-secondary {\n  background-color: #fcb117;\n}\n.color-warning {\n  background-color: #f79232;\n}\n.color-danger {\n  background-color: #d04437;\n}\n.color-default {\n  background-color: #eeeeee;\n  color: #2e323b;\n}\nh3 {\n  clear: both;\n  margin-top: 1em;\n}\n.cl-wrap {\n  width: 100%;\n  float: left;\n}\n.color-txt {\n  background-color: #333;\n}\n.color-subtext {\n  background-color: #666;\n}\n.color-textsmall {\n  background-color: #888;\n}\n", ""]);
 
 	// exports
 
@@ -25317,10 +25249,10 @@
 			key: 'render',
 			value: function render() {
 				var moduleUsage = 'import React from \'react\';\n' + '//Import Button Component\n' + 'import {Button} from \'./Comp/Button\';\n',
-				    normalBtn = '<Button type="primary" label="Accept" clickBtn={this.handleClick} />\n' + '<Button type="normal" label="Back" clickBtn={this.handleClick} />\n' + '<Button type="secondary" label="Save a Life" clickBtn={this.handleClick} />\n' + '<Button type="danger" label="Reject" clickBtn={this.handleClick} />',
-				    smallBtn = '<Button type="primary" size="small" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal" size="small" label="Cancel" clickBtn={this.handleClick} />\n' + '<Button type="secondary" size="small" label="Save a Life" clickBtn={this.handleClick} />\n' + '<Button type="danger" size="small" label="Delete" clickBtn={this.handleClick} />',
-				    largeBtn = '<Button type="primary" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal" size="large" label="Cancel" clickBtn={this.handleClick} />\n' + '<Button type="secondary" size="large" label="Save a Life" clickBtn={this.handleClick} />\n' + '<Button type="danger" size="large" label="Delete" clickBtn={this.handleClick} />',
-				    borderButton = '//Border only buttons\n' + '<Button type="primary_o" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="normal_o" size="large" label="Save" clickBtn={this.handleClick} />\n' + '<Button type="danger_o" size="large" label="Save" clickBtn={this.handleClick} />\n';
+				    normalBtn = '<Button type="primary" label="Accept" onClick={this.handleClick} />\n' + '<Button type="normal" label="Back" onClick={this.handleClick} />\n' + '<Button type="secondary" label="Save a Life" onClick={this.handleClick} />\n' + '<Button type="danger" label="Reject" onClick={this.handleClick} />',
+				    smallBtn = '<Button type="primary" size="small" label="Save" onClick={this.handleClick} />\n' + '<Button type="normal" size="small" label="Cancel" onClick={this.handleClick} />\n' + '<Button type="secondary" size="small" label="Save a Life" onClick={this.handleClick} />\n' + '<Button type="danger" size="small" label="Delete" onClick={this.handleClick} />',
+				    largeBtn = '<Button type="primary" size="large" label="Save" onClick={this.handleClick} />\n' + '<Button type="normal" size="large" label="Cancel" onClick={this.handleClick} />\n' + '<Button type="secondary" size="large" label="Save a Life" onClick={this.handleClick} />\n' + '<Button type="danger" size="large" label="Delete" onClick={this.handleClick} />',
+				    borderButton = '//Border only buttons\n' + '<Button type="primary_o" size="large" label="Save" onClick={this.handleClick} />\n' + '<Button type="normal_o" size="large" label="Save" onClick={this.handleClick} />\n' + '<Button type="danger_o" size="large" label="Save" onClick={this.handleClick} />\n';
 				return _react2['default'].createElement(
 					'div',
 					null,
@@ -25347,10 +25279,10 @@
 							{ className: 'help' },
 							'Button Normal'
 						),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', label: 'Accept', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', label: 'Back', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary', label: 'Save a Life', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', label: 'Reject', clickBtn: this.handleClick })
+						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', label: 'Accept', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', label: 'Back', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary', label: 'Save a Life', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', label: 'Reject', onClick: this.handleClick })
 					),
 					_react2['default'].createElement(
 						'div',
@@ -25379,10 +25311,10 @@
 							{ className: 'help' },
 							'Button large'
 						),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'large', label: 'Save', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', size: 'large', label: 'Cancel', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary', size: 'large', label: 'Save a Life', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'large', label: 'Delete', clickBtn: this.handleClick })
+						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'large', label: 'Save', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', size: 'large', label: 'Cancel', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary', size: 'large', label: 'Save a Life', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'large', label: 'Delete', onClick: this.handleClick })
 					),
 					_react2['default'].createElement(
 						'div',
@@ -25406,10 +25338,10 @@
 							{ className: 'help' },
 							'Button small'
 						),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'small', label: 'Save', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', size: 'small', label: 'Cancel', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary', size: 'small', label: 'Save a Life', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'small', label: 'Delete', clickBtn: this.handleClick })
+						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'small', label: 'Save', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', size: 'small', label: 'Cancel', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary', size: 'small', label: 'Save a Life', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'small', label: 'Delete', onClick: this.handleClick })
 					),
 					_react2['default'].createElement(
 						'div',
@@ -25433,10 +25365,10 @@
 							{ className: 'help' },
 							'Border only buttons'
 						),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'primary_o', label: 'Save', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'normal_o', label: 'Cancel', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary_o', label: 'Save a Life', clickBtn: this.handleClick }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'danger_o', label: 'Delete', clickBtn: this.handleClick })
+						_react2['default'].createElement(_CompButton2['default'], { type: 'primary_o', label: 'Save', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'normal_o', label: 'Cancel', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'secondary_o', label: 'Save a Life', onClick: this.handleClick }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'danger_o', label: 'Delete', onClick: this.handleClick })
 					),
 					_react2['default'].createElement(
 						'div',
@@ -25638,7 +25570,7 @@
 	})(_react2['default'].Component);
 
 	Button.propTypes = {
-		clickBtn: _react2['default'].PropTypes.func
+		onClick: _react2['default'].PropTypes.func
 	};
 
 	Button.defaultProps = {
@@ -25725,9 +25657,9 @@
 							{ className: 'help' },
 							'Button Normal'
 						),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'large', label: 'Link Primary', href: '/linkbutons', target: '_new' }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', size: 'large', label: 'Link Default', href: '/linkbutons' }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'large', label: 'Link Danger', href: '/linkbutons' }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', label: 'Link Primary', href: '/linkbutons', target: '_new' }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'normal', label: 'Link Default', href: '/linkbutons' }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', label: 'Link Danger', href: '/linkbutons' }),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement('br', null),
 						_react2['default'].createElement(
@@ -26659,8 +26591,8 @@
 							{ className: 'head' },
 							'Example'
 						),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'large', label: 'Open Dialog', clickBtn: this.openDialog }),
-						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'large', label: 'Open Error Dialog', clickBtn: this.openErrorDialog })
+						_react2['default'].createElement(_CompButton2['default'], { type: 'primary', size: 'large', label: 'Open Dialog', onClick: this.openDialog }),
+						_react2['default'].createElement(_CompButton2['default'], { type: 'danger', size: 'large', label: 'Open Error Dialog', onClick: this.openErrorDialog })
 					),
 					_react2['default'].createElement(
 						'div',

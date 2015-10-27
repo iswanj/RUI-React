@@ -36,9 +36,9 @@ class Buttons extends React.Component {
 				<div className="example">
 					<p className="head">Example</p>
 					<p className="help">Button Normal</p>
-					<Button type="primary" size="large" label="Link Primary" href="/linkbutons" target="_new"/>
-					<Button type="normal" size="large" label="Link Default" href="/linkbutons" />
-					<Button type="danger" size="large" label="Link Danger" href="/linkbutons" />
+					<Button type="primary" label="Link Primary" href="/linkbutons" target="_new"/>
+					<Button type="normal" label="Link Default" href="/linkbutons" />
+					<Button type="danger" label="Link Danger" href="/linkbutons" />
 					<br /><br />
 					<p className="help">Button Small</p>
 					<Button type="primary" size="small" label="Link Primary" href="/linkbutons" target="_new"/>
