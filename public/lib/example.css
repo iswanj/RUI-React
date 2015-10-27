@@ -2,7 +2,8 @@ body {
 	padding: 1em;
 }
 .help {
-	font-size: .9em;
+	font-size: 1.1em !important;
+	color: #666 !important;
 }
 code {
 	padding: 2px 4px;
