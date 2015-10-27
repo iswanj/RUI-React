@@ -1,5 +1,5 @@
 import Color from 'color';
-import helpers from './util/Helpers';
+import helpers from './util/ButtonHelpers';
 import $ from './util/variables';
 
 export default {
@@ -11,6 +11,7 @@ export default {
   	display: 'inline-block',
   	marginBottom: 0, // For input.btn
   	marginRight: '.3em',
+    outline: 'none',
   	fontWeight: 400,
   	textAlign: 'center',
   	verticalAlign: 'middle',
@@ -24,85 +25,54 @@ export default {
     // Adding interactive state couldn't be easier! Add a special key to your
     // style object (:hover, :focus, :active, or @media) with the additional rules.
   },
-  large: {
-    padding: `${$.btnPaddingVertical} ${$.btnPaddingHorizontal}`,
+  normalSize: {
+    padding: `${$.button.btnPaddingVertical} ${$.button.btnPaddingHorizontal}`,
     fontSize: '.9em',
     lineHeight: 1.444,
     borderRadius: $.bordeRadiusBase,
   },
   small: {
-    padding: `${$.btnPaddingSmVertical} ${$.btnPaddingSmHorizontal}`,
+    padding: `${$.button.btnPaddingSmVertical} ${$.button.btnPaddingSmHorizontal}`,
     fontSize: '.75em',
     lineHeight: 1.444,
     borderRadius: $.bordeRadiusBase,
   },
-  normal: helpers.buttonVariant($.primaryDark, $.def, Color($.def).darken(0.1).hexString()),
-  primary: helpers.buttonVariant('#fff', $.primary, Color($.primary).darken(0.1).hexString()),
-  danger: helpers.buttonVariant('#fff', $.danger, Color($.danger).darken(0.1).hexString()),
-  normal_o: {
-    backgroundColor: 'transparent',
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    borderColor: Color($.def).darken(0.1).hexString(),
-    color: $.primaryDark,
-    ':hover': {
-      color: Color($.primaryDark).darken(0.1).hexString(),
-      borderColor: Color($.def).darken(0.2).hexString(),
-      textDecoration: 'none'
-    },
-    ':focus': {
-      color: Color($.primaryDark).darken(0.1).hexString(),
-      borderColor: Color($.def).darken(0.2).hexString(),
-      textDecoration: 'none'
-    },
-    ':active': {
-      color: Color($.primaryDark).darken(0.1).hexString(),
-      borderColor: Color($.def).darken(0.2).hexString(),
-      textDecoration: 'none'
-    }
+  large: {
+    padding: `${$.button.btnPaddingLgVertical} ${$.button.btnPaddingLgHorizontal}`,
+    fontSize: '1.4em',
+    fontWeight: '400',
+    lineHeight: 1.444,
+    borderRadius: $.bordeRadiusBase,
   },
-  primary_o: {
-    backgroundColor: 'transparent',
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    borderColor: $.primary,
-    color: $.primary,
-    ':hover': {
-      color: Color($.primary).darken(0.1).hexString(),
-      borderColor: Color($.primary).darken(0.1).hexString(),
-      textDecoration: 'none'
-    },
-    ':focus': {
-      color: Color($.primary).darken(0.1).hexString(),
-      borderColor: Color($.primary).darken(0.1).hexString(),
-      textDecoration: 'none'
-    },
-    ':active': {
-      color: Color($.primary).darken(0.1).hexString(),
-      borderColor: Color($.primary).darken(0.1).hexString(),
-      textDecoration: 'none'
-    }
-  },
-  danger_o: {
-    backgroundColor: 'transparent',
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    borderColor: $.danger,
-    color: $.danger,
-    ':hover': {
-      color: Color($.danger).darken(0.1).hexString(),
-      borderColor: Color($.danger).darken(0.1).hexString(),
-      textDecoration: 'none'
-    },
-    ':focus': {
-      color: Color($.danger).darken(0.1).hexString(),
-      borderColor: Color($.danger).darken(0.1).hexString(),
-      textDecoration: 'none'
-    },
-    ':active': {
-      color: Color($.danger).darken(0.1).hexString(),
-      borderColor: Color($.danger).darken(0.1).hexString(),
-      textDecoration: 'none'
-    }
-  }
+  normal: helpers.buttonVariant($.textNormal, $.def, $.def),
+  normalClicked: helpers.buttonVariantClicked($.textNormal, $.def, $.def),
+  normalHovered: helpers.buttonVariantHovered($.textNormal, $.def, $.def),
+
+  primary: helpers.buttonVariant($.textWhite, $.primary, $.primary),
+  primaryClicked: helpers.buttonVariantClicked($.textWhite, $.primary, $.primary),
+  primaryHovered: helpers.buttonVariantHovered($.textWhite, $.primary, $.primary),
+
+  danger: helpers.buttonVariant($.textWhite, $.danger, $.danger),
+  dangerClicked: helpers.buttonVariantClicked($.textWhite, $.danger, $.danger),
+  dangerHovered: helpers.buttonVariantHovered($.textWhite, $.danger, $.danger),
+
+  secondary: helpers.buttonVariant($.textWhite, $.secondary, $.secondary),
+  secondaryClicked: helpers.buttonVariantClicked($.textWhite, $.secondary, $.secondary),
+  secondaryHovered: helpers.buttonVariantHovered($.textWhite, $.secondary, $.secondary),
+
+  normal_o: helpers.buttonVariant($.textNormal, 'transparent', $.def),
+  normal_oClicked: helpers.buttonVariantClicked(Color($.textNormal).darken(0.1), 'transparent', $.def),
+  normal_oHovered: helpers.buttonVariantHovered( Color($.textNormal).darken(0.15).hexString(), 'transparent', $.def),
+
+  primary_o: helpers.buttonVariant($.textNormal, 'transparent', $.primary),
+  primary_oClicked: helpers.buttonVariantClicked(Color($.primary).darken(0.1), 'transparent', $.primary),
+  primary_oHovered: helpers.buttonVariantHovered( Color($.primary).darken(0.15).hexString(), 'transparent', $.primary),
+
+  danger_o: helpers.buttonVariant($.textNormal, 'transparent', $.danger),
+  danger_oClicked: helpers.buttonVariantClicked(Color($.danger).darken(0.1), 'transparent', $.danger),
+  danger_oHovered: helpers.buttonVariantHovered( Color($.danger).darken(0.15).hexString(), 'transparent', $.danger),
+
+  secondary_o: helpers.buttonVariant($.textNormal, 'transparent', $.secondary),
+  secondary_oClicked: helpers.buttonVariantClicked(Color($.secondary).darken(0.1), 'transparent', $.secondary),
+  secondary_oHovered: helpers.buttonVariantHovered( Color($.secondary).darken(0.15).hexString(), 'transparent', $.secondary),
 };

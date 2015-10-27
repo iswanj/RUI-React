@@ -1,29 +1,29 @@
 import Color from 'color';
 export default {
   bodyBg: '#fff',
-  dark: '#1d2027',
-  primaryDark: '#2e323b',
-  primary: '#1e90ff',
+  primary: '#1f90ff',
+  secondary: '#fcb117',
   success: '#14892c',
-  successLight:	'#67ab49',
-  info: '#439fe0',
   warning: '#f79232',
   danger: '#d04437',
-  yellow:  '#f6c342',
   def: '#eeeeee',
-  gold: '#fed300',
-  silver: '#a09d9b',
-  bronze: '#c99c23',
-  btnDefaultBg:		'#eeeeee',
-  btnDefaultBorder:	Color($.def).darken(0.1).hexString(),
-  btnDefaultColor:		'#2e323b',
-  bordeRadiusBase: '4px',
-  borderRadiusLarge: '5px',
-  borderRadiusSmall: '2px',
-  // Buttons padding
-  btnPaddingVertical: '.4em',
-  btnPaddingHorizontal:	'1em',
-  // Button small padding
-  btnPaddingSmVertical: '.4em',
-  btnPaddingSmHorizontal: '.8em',
+  //borders
+  bordeRadiusBase: '2px',
+  borderRadiusSmall: '1px',
+  //font colors
+  textNormal: '#333',
+  textSecoandary: '#666',
+  textSmall: '#888',
+  textWhite: '#fff',
+  button: {
+      // Buttons padding
+      btnPaddingVertical: '.5em',
+      btnPaddingHorizontal:	'1.5em',
+      // Button small padding
+      btnPaddingSmVertical: '.4em',
+      btnPaddingSmHorizontal: '.8em',
+      // Button extra large padding
+      btnPaddingLgVertical: '.6em',
+      btnPaddingLgHorizontal: '2.9em'
+  }
 }
