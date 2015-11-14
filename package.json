@@ -35,10 +35,10 @@
     "axios": "^0.5.4",
     "color": "^0.10.1",
     "express": "^4.13.3",
-    "history": "^1.12.6",
+    "history": "^1.13.1",
     "radium": "^0.13.8",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
     "react-router": "^1.0.0-rc1"
   }
 }
