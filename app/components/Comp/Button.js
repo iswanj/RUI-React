@@ -7,9 +7,18 @@ import mergeObjects from './m';
 import styles from './styles/button.js';
 
 /**
+* @discription: This component render button and link button
+ * @props: type (String):
+ 		- Type of button [primary, normal, secondary, danger, primary_o, normal_o, secondary_o, danger_o ]
+		- default: normal
+ * @props: size (String):
+ 		- size of button [normalSize, small, large]
+		- default: normalSize
+ * @props: label (String): Button text - default: 'Button'
+ * @props: onClick (Function) - callback function when button Clicked
  *
  * USAGE:
- * <Button  />
+ * <Button  type="primary" size="large" label="Button" onClick={Action} />
  *
  */
 class Button extends Component {
